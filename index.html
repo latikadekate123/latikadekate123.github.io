@@ -12,15 +12,15 @@
         }
 
         :root {
-            --primary: #0D1B2A;
-            --secondary: #1B263B;
-            --accent: #415A77;
-            --accent-light: #5B7595;
-            --text-primary: #E0E1DD;
-            --text-secondary: rgba(224, 225, 221, 0.82);
-            --text-muted: rgba(224, 225, 221, 0.62);
-            --border: rgba(224, 225, 221, 0.14);
-            --success: #FF5D5D;
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #3b82f6;
+            --accent-light: #60a5fa;
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --success: #10b981;
         }
 
         html {
@@ -29,7 +29,7 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            background: linear-gradient(135deg, #0f172a 0%, #1a1f35 100%);
             color: var(--text-primary);
             line-height: 1.6;
             overflow-x: hidden;
@@ -40,7 +40,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(13, 27, 42, 0.95);
+            background: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border);
             z-index: 1000;
@@ -94,7 +94,7 @@
             margin-top: 80px;
             padding: 6rem 2rem;
             text-align: center;
-            background: linear-gradient(135deg, rgba(65, 90, 119, 0.18) 0%, rgba(27, 38, 59, 0.72) 100%);
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(30, 41, 59, 0.5) 100%);
             border-bottom: 1px solid var(--border);
         }
 
@@ -162,7 +162,7 @@
         }
 
         .btn-secondary:hover {
-            background: rgba(224, 225, 221, 0.08);
+            background: rgba(59, 130, 246, 0.1);
             transform: translateY(-2px);
         }
 
@@ -209,7 +209,7 @@
         }
 
         .highlight-card {
-            background: linear-gradient(135deg, rgba(65, 90, 119, 0.18) 0%, rgba(27, 38, 59, 0.7) 100%);
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(30, 41, 59, 0.5) 100%);
             border: 1px solid var(--border);
             border-radius: 0.75rem;
             padding: 2rem;
@@ -219,7 +219,7 @@
         .highlight-card:hover {
             border-color: var(--accent);
             transform: translateY(-5px);
-            background: linear-gradient(135deg, rgba(65, 90, 119, 0.28) 0%, rgba(27, 38, 59, 0.82) 100%);
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(30, 41, 59, 0.6) 100%);
         }
 
         .highlight-card .label {
@@ -314,7 +314,7 @@
         }
 
         .skill-category {
-            background: rgba(27, 38, 59, 0.65);
+            background: rgba(30, 41, 59, 0.5);
             border: 1px solid var(--border);
             padding: 2rem;
             border-radius: 0.75rem;
@@ -328,7 +328,7 @@
 
         .skill-tag {
             display: inline-block;
-            background: rgba(65, 90, 119, 0.24);
+            background: rgba(59, 130, 246, 0.15);
             color: var(--accent-light);
             padding: 0.5rem 1rem;
             border-radius: 2rem;
@@ -346,7 +346,7 @@
         }
 
         .project-card {
-            background: linear-gradient(135deg, rgba(27, 38, 59, 0.85) 0%, rgba(65, 90, 119, 0.08) 100%);
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(59, 130, 246, 0.05) 100%);
             border: 1px solid var(--border);
             border-radius: 0.75rem;
             overflow: hidden;
@@ -358,7 +358,7 @@
         .project-card:hover {
             border-color: var(--accent);
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(65, 90, 119, 0.24);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
         }
 
         .project-header {
@@ -424,7 +424,7 @@
         }
 
         .tech-badge {
-            background: rgba(65, 90, 119, 0.24);
+            background: rgba(59, 130, 246, 0.15);
             color: var(--accent-light);
             padding: 0.25rem 0.75rem;
             border-radius: 0.25rem;
@@ -452,7 +452,7 @@
 
         /* Experience Section */
         .experience-item {
-            background: rgba(27, 38, 59, 0.65);
+            background: rgba(30, 41, 59, 0.5);
             border: 1px solid var(--border);
             border-left: 3px solid var(--accent);
             padding: 2rem;
@@ -462,7 +462,7 @@
         }
 
         .experience-item:hover {
-            background: rgba(27, 38, 59, 0.8);
+            background: rgba(30, 41, 59, 0.7);
             border-left-color: var(--accent-light);
         }
 
@@ -506,7 +506,7 @@
 
         /* Education Section */
         .education-item {
-            background: rgba(27, 38, 59, 0.65);
+            background: rgba(30, 41, 59, 0.5);
             border: 1px solid var(--border);
             padding: 2rem;
             margin-bottom: 2rem;
@@ -542,8 +542,8 @@
         }
 
         .honor-badge {
-            background: linear-gradient(135deg, var(--success) 0%, #ff7b7b 100%);
-            color: #0D1B2A;
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            color: #000;
             padding: 0.5rem 1rem;
             border-radius: 0.5rem;
             font-size: 0.85rem;
@@ -591,7 +591,7 @@
 
         /* Footer */
         footer {
-            background: rgba(13, 27, 42, 0.95);
+            background: rgba(15, 23, 42, 0.95);
             border-top: 1px solid var(--border);
             padding: 2rem 0;
             text-align: center;
