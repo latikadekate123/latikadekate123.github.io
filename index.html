@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latika Liladhar Dekate | Data Science & AI Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #3b82f6;
+            --accent-light: #60a5fa;
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --success: #10b981;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1a1f35 100%);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 6rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(30, 41, 59, 0.5) 100%);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero .container {
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero .title {
+            color: var(--accent);
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            border: 2px solid var(--accent);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-light);
+            border-color: var(--accent-light);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(59, 130, 246, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Highlights Section */
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+            padding: 4rem 2rem;
+        }
+
+        .highlight-card {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(30, 41, 59, 0.5) 100%);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .highlight-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(30, 41, 59, 0.6) 100%);
+        }
+
+        .highlight-card .label {
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Section Headers */
+        section {
+            padding: 4rem 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+        }
+
+        .section-intro {
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .about-text .highlight-text {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .stat-box {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .stat-box .number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .stat-box .label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid var(--border);
+            padding: 2rem;
+            border-radius: 0.75rem;
+        }
+
+        .skill-category h3 {
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.15);
+            color: var(--accent-light);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            margin-bottom: 0.75rem;
+            margin-right: 0.75rem;
+            font-size: 0.9rem;
+            border: 1px solid var(--accent);
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(59, 130, 246, 0.05) 100%);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+        }
+
+        .project-header {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            padding: 2rem;
+            color: white;
+        }
+
+        .project-header h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-tag {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.25rem 0.75rem;
+            border-radius: 2rem;
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+        }
+
+        .project-body {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .project-details {
+            flex-grow: 1;
+        }
+
+        .project-detail {
+            margin-bottom: 1.5rem;
+        }
+
+        .project-detail-label {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-detail-content {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .tech-badge {
+            background: rgba(59, 130, 246, 0.15);
+            color: var(--accent-light);
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.25rem;
+            font-size: 0.8rem;
+            border: 1px solid var(--accent);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .project-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: var(--accent-light);
+        }
+
+        /* Experience Section */
+        .experience-item {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover {
+            background: rgba(30, 41, 59, 0.7);
+            border-left-color: var(--accent-light);
+        }
+
+        .experience-item h3 {
+            color: var(--accent);
+            margin-bottom: 0.25rem;
+            font-size: 1.2rem;
+        }
+
+        .experience-item .company {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-item .period {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .experience-item ul {
+            list-style: none;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .experience-item li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .experience-item li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        /* Education Section */
+        .education-item {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid var(--border);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 0.5rem;
+        }
+
+        .education-item h3 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .education-item .institution {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .education-item .details {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .honor-badge {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            color: #000;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .contact-section h2 {
+            margin-bottom: 2rem;
+            border-bottom: none;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: var(--accent-light);
+            transform: translateY(-2px);
+        }
+
+        .contact-link .icon {
+            font-size: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(15, 23, 42, 0.95);
+            border-top: 1px solid var(--border);
+            padding: 2rem 0;
+            text-align: center;
+            color: var(--text-muted);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .highlights {
+                grid-template-columns: 1fr;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Utility Classes */
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-4 {
+            margin-top: 2rem;
+        }
+
+        .emoji {
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">LD</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Latika Liladhar Dekate</h1>
+            <p class="title">Data Science & AI Engineering | Big Data | Agentic Workflows</p>
+            <p>M.S. in Data Science, Analytics & Engineering @ Arizona State University<br>
+            NASA Space Apps Challenge Winner & Global Nominee | Patent Holder in Telecommunications</p>
+            <div class="cta-buttons">
+                <a href="assets/resume.pdf" class="btn btn-primary" download>Download Resume</a>
+                <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                <a href="#projects" class="btn btn-secondary">View My Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Highlights -->
+    <section>
+        <div class="container">
+            <div class="highlights">
+                <div class="highlight-card">
+                    <div class="label">🎓 Education</div>
+                    <h3>Arizona State University</h3>
+                    <p>M.S. in Data Science, Analytics & Engineering (EE) • GPA: 3.78/4.0 • Dec 2026</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="label">🚀 Recognition</div>
+                    <h3>NASA Space Apps Challenge</h3>
+                    <p>Global Nominee & Winner | Patent Holder in Telecommunications</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="label">📊 Expertise</div>
+                    <h3>Full-Stack AI Solutions</h3>
+                    <p>From data pipelines to deployed models | 40% faster research discovery | 0.92 F1 scores</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="section-intro">
+                Building intelligent systems that bridge data and decision-making.
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm a <span class="highlight-text">Data Science & AI Engineer</span> with a strong foundation in Electronics and Telecommunications. Currently pursuing my M.S. in Data Science at Arizona State University, I specialize in designing <span class="highlight-text">end-to-end AI solutions</span>—from data ingestion and ETL pipelines to deploying production-grade machine learning models.</p>
+                    <p>My expertise spans <span class="highlight-text">agentic workflows, graph-based retrieval systems, and big data analytics</span>. I'm passionate about solving complex problems using modern ML techniques, cloud infrastructure, and software engineering best practices.</p>
+                    <p>As a NASA Space Apps Challenge Winner and Patent Holder, I bring a proven track record of innovation and impact to every project. When I'm not coding, I'm leading ML curriculum development and mentoring the next generation of data scientists.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-box">
+                        <div class="number">40%</div>
+                        <div class="label">Faster Research Discovery with AstraNode</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="number">0.92</div>
+                        <div class="label">F1 Score on Fraud Detection</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="number">150+</div>
+                        <div class="label">Students Mentored in ML</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="number">25%</div>
+                        <div class="label">Organic Traffic Increase (SEO Project)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2>Technical Expertise</h2>
+            <div class="section-intro">
+                A comprehensive toolkit for building AI and data solutions at scale.
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>🤖 AI & Machine Learning</h3>
+                    <span class="skill-tag">PyTorch</span>
+                    <span class="skill-tag">TensorFlow</span>
+                    <span class="skill-tag">Transformers</span>
+                    <span class="skill-tag">FinBERT</span>
+                    <span class="skill-tag">GraphRAG</span>
+                    <span class="skill-tag">LangChain</span>
+                    <span class="skill-tag">Hugging Face</span>
+                    <span class="skill-tag">NER (Named Entity Recognition)</span>
+                    <span class="skill-tag">NLP</span>
+                </div>
+                <div class="skill-category">
+                    <h3>💾 Data Engineering & Databases</h3>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">PostgreSQL 17</span>
+                    <span class="skill-tag">Redis</span>
+                    <span class="skill-tag">Neo4j</span>
+                    <span class="skill-tag">ETL Pipelines</span>
+                    <span class="skill-tag">Data Wrangling</span>
+                    <span class="skill-tag">Big Data (Spark, Hadoop)</span>
+                    <span class="skill-tag">EDA</span>
+                </div>
+                <div class="skill-category">
+                    <h3>☁️ DevOps, Cloud & Visualization</h3>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Kubernetes</span>
+                    <span class="skill-tag">Flask</span>
+                    <span class="skill-tag">Streamlit</span>
+                    <span class="skill-tag">D3.js</span>
+                    <span class="skill-tag">Tableau</span>
+                    <span class="skill-tag">AWS</span>
+                    <span class="skill-tag">GCP</span>
+                    <span class="skill-tag">APIs & Web Scraping</span>
+                </div>
+                <div class="skill-category">
+                    <h3>🛠️ Backend & Collaboration</h3>
+                    <span class="skill-tag">Go</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">Bash</span>
+                    <span class="skill-tag">WebSockets</span>
+                    <span class="skill-tag">Yjs CRDTs</span>
+                    <span class="skill-tag">Real-time Systems</span>
+                    <span class="skill-tag">Rest APIs</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <div class="section-intro">
+                End-to-end solutions showcasing AI, data engineering, and full-stack development.
+            </div>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>🧠 AstraNode</h3>
+                        <span class="project-tag">AI Research Intelligence</span>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-description">
+                            A GraphRAG system leveraging Neo4j to synthesize 600+ NASA research papers, enabling faster research discovery and knowledge synthesis.
+                        </div>
+                        <div class="project-details">
+                            <div class="project-detail">
+                                <div class="project-detail-label">🎯 Impact</div>
+                                <div class="project-detail-content"><strong>40% reduction</strong> in research discovery time through intelligent graph-based retrieval</div>
+                            </div>
+                            <div class="project-detail">
+                                <div class="project-detail-label">🛠️ Tech Stack</div>
+                                <div class="tech-stack">
+                                    <span class="tech-badge">Neo4j</span>
+                                    <span class="tech-badge">GraphRAG</span>
+                                    <span class="tech-badge">LangChain</span>
+                                    <span class="tech-badge">Python</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/latikadekate123" class="project-link">GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>📊 Advanced Text Analyzer</h3>
+                        <span class="project-tag">Multi-Domain NLP</span>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-description">
+                            Interactive web application for multi-domain sentiment analysis with domain-specific fine-tuning (FinBERT) and Named Entity Recognition (SpaCy).
+                        </div>
+                        <div class="project-details">
+                            <div class="project-detail">
+                                <div class="project-detail-label">🎯 Impact</div>
+                                <div class="project-detail-content">Multi-domain sentiment analysis with 95%+ accuracy across financial, product, and general text classifications</div>
+                            </div>
+                            <div class="project-detail">
+                                <div class="project-detail-label">🛠️ Tech Stack</div>
+                                <div class="tech-stack">
+                                    <span class="tech-badge">FinBERT</span>
+                                    <span class="tech-badge">SpaCy</span>
+                                    <span class="tech-badge">Flask</span>
+                                    <span class="tech-badge">React</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/latikadekate123/Advanced-Text-Analyzer" class="project-link">GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>🚀 Smart Team Manager</h3>
+                        <span class="project-tag">Real-time Collaboration</span>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-description">
+                            Enterprise team planning application with role-based workflows, real-time collaborative editing, and container-first architecture.
+                        </div>
+                        <div class="project-details">
+                            <div class="project-detail">
+                                <div class="project-detail-label">🎯 Impact</div>
+                                <div class="project-detail-content">Real-time sync for 50+ concurrent users with zero data conflicts via CRDTs</div>
+                            </div>
+                            <div class="project-detail">
+                                <div class="project-detail-label">🛠️ Tech Stack</div>
+                                <div class="tech-stack">
+                                    <span class="tech-badge">Go</span>
+                                    <span class="tech-badge">WebSockets</span>
+                                    <span class="tech-badge">Yjs CRDTs</span>
+                                    <span class="tech-badge">Docker</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/latikadekate123/Smart-Team-Manager" class="project-link">GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>🚌 CityPulse Smart Transit</h3>
+                        <span class="project-tag">Analytics Dashboard</span>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-description">
+                            SQL-based analytics system using real NYC MTA data with PostgreSQL 17 to track route reliability, travel trends, and service anomalies.
+                        </div>
+                        <div class="project-details">
+                            <div class="project-detail">
+                                <div class="project-detail-label">🎯 Impact</div>
+                                <div class="project-detail-content">90 days of simulated trips revealing weather-dependent congestion patterns and peak-hour constraints</div>
+                            </div>
+                            <div class="project-detail">
+                                <div class="project-detail-label">🛠️ Tech Stack</div>
+                                <div class="tech-stack">
+                                    <span class="tech-badge">Python</span>
+                                    <span class="tech-badge">PostgreSQL 17</span>
+                                    <span class="tech-badge">Streamlit</span>
+                                    <span class="tech-badge">Real MTA Data</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/latikadekate123/City-Pulse-Smart-Transit-System-using-SQL" class="project-link">GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>⚡ Smart Grid Energy Analytics</h3>
+                        <span class="project-tag">ETL & Anomaly Detection</span>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-description">
+                            Complete ETL pipeline with interactive Streamlit dashboard for household energy consumption anomaly detection using Z-score methodology.
+                        </div>
+                        <div class="project-details">
+                            <div class="project-detail">
+                                <div class="project-detail-label">🎯 Impact</div>
+                                <div class="project-detail-content">Detects unusual consumption patterns with Z-score methodology; visualizes trends and anomalies real-time</div>
+                            </div>
+                            <div class="project-detail">
+                                <div class="project-detail-label">🛠️ Tech Stack</div>
+                                <div class="tech-stack">
+                                    <span class="tech-badge">Python</span>
+                                    <span class="tech-badge">ETL Pipeline</span>
+                                    <span class="tech-badge">Streamlit</span>
+                                    <span class="tech-badge">UCI Dataset</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/latikadekate123/Smartgrid-Power-System-Load-Forecasting" class="project-link">GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>🏥 System Health Monitor</h3>
+                        <span class="project-tag">DevOps Tool</span>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-description">
+                            Pure Bash system monitoring tool with real-time desktop notifications and logging for disk usage, memory, CPU, and system uptime tracking.
+                        </div>
+                        <div class="project-details">
+                            <div class="project-detail">
+                                <div class="project-detail-label">🎯 Impact</div>
+                                <div class="project-detail-content">Lightweight monitoring without Heavy CLI overhead; real-time alerts with sound notifications</div>
+                            </div>
+                            <div class="project-detail">
+                                <div class="project-detail-label">🛠️ Tech Stack</div>
+                                <div class="tech-stack">
+                                    <span class="tech-badge">Bash</span>
+                                    <span class="tech-badge">System Monitoring</span>
+                                    <span class="tech-badge">Notifications</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/latikadekate123/System-Health-Monitor-on-Ubuntu" class="project-link">GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2>Professional Experience</h2>
+            <div class="section-intro">
+                Hands-on experience building ML solutions and leading technical initiatives.
+            </div>
+
+            <div class="experience-item">
+                <h3>ML & Data Science Coordinator</h3>
+                <div class="company">Google Developer Student Clubs (GDSC) @ Arizona State University</div>
+                <div class="period">Academic Year 2024-2025</div>
+                <ul>
+                    <li>Led 10-week comprehensive ML curriculum for 150+ students covering foundational to advanced topics</li>
+                    <li>Increased project completion rate by 15% through structured mentoring and hands-on learning</li>
+                    <li>Designed and delivered practical ML workshops on PyTorch, TensorFlow, and real-world applications</li>
+                    <li>Coached student projects to deployment, fostering full-stack ML engineering practices</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>SEO Data Analyst Intern</h3>
+                <div class="company">Help for Coders</div>
+                <div class="period">Summer 2024</div>
+                <ul>
+                    <li>Designed and implemented a Python-based cohort analysis pipeline to track user engagement metrics</li>
+                    <li>Delivered insights that drove 25% increase in organic traffic through data-driven optimization</li>
+                    <li>Automated repetitive ETL tasks, reducing manual reporting by 40%</li>
+                    <li>Collaborated with marketing team to identify high-value user segments and personalization opportunities</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>Machine Learning Intern</h3>
+                <div class="company">SIES Graduate School of Technology</div>
+                <div class="period">Summer 2024</div>
+                <ul>
+                    <li>Improved object detection model performance by 10% through hyperparameter tuning and data augmentation</li>
+                    <li>Developed credit card fraud detection system achieving 0.92 F1 score on imbalanced datasets</li>
+                    <li>Implemented data cleaning and feature engineering pipelines for production models</li>
+                    <li>Documented end-to-end ML workflows and best practices for team knowledge transfer</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2>Education & Honors</h2>
+            <div class="section-intro">
+                Academic foundation in Data Science with recognition for innovation and excellence.
+            </div>
+
+            <div class="education-item">
+                <h3>Master of Science in Data Science</h3>
+                <div class="institution">Arizona State University (Tempe Campus)</div>
+                <div class="details">
+                    <span>📍 Concentration: Electrical Engineering</span>
+                    <span>📈 GPA: 3.78/4.00</span>
+                    <span>🎓 Expected: December 2026</span>
+                </div>
+                <p>Advanced study in data science, analytics, machine learning, big data systems, and cloud engineering. Coursework includes applied machine learning, big data technologies, advanced databases, and agentic AI systems.</p>
+                <div class="badges">
+                    <div class="honor-badge">🚀 NASA Space Apps Challenge Global Nominee & Winner</div>
+                </div>
+            </div>
+
+            <div class="education-item">
+                <h3>Bachelor of Engineering</h3>
+                <div class="institution">SIES Graduate School of Technology / Similar Institution</div>
+                <div class="details">
+                    <span>📍 Major: Electronics & Telecommunication</span>
+                    <span>📈 GPA: 3.71/4.00</span>
+                    <span>🎓 Completed: 2024</span>
+                </div>
+                <p>Strong foundation in electronics, signal processing, and systems engineering. This background informs my approach to building scalable, efficient data systems and machine learning architectures.</p>
+                <div class="badges">
+                    <div class="honor-badge">📜 Patent in Telecommunications (Bachelor's Final Year Project)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Let's Connect</h2>
+            <p class="section-intro" style="margin-bottom: 2rem;">
+                Interested in collaborating? I'm always open to new opportunities in Data Science, AI Engineering, and Big Data.
+            </p>
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/latika-dekate-12181a221" class="contact-link" target="_blank">
+                    <span class="icon">💼</span>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/latikadekate123" class="contact-link" target="_blank">
+                    <span class="icon">🐙</span>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://www.kaggle.com/latikadekate" class="contact-link" target="_blank">
+                    <span class="icon">📊</span>
+                    <span>Kaggle</span>
+                </a>
+                <a href="mailto:ldekate@asu.edu" class="contact-link">
+                    <span class="icon">✉️</span>
+                    <span>Email</span>
+                </a>
+            </div>
+            <p style="color: var(--text-muted); margin-top: 2rem;">
+                Feel free to reach out for opportunities in Data Science, Machine Learning Engineering, or AI Research roles.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Latika Liladhar Dekate. Designed & Built with passion for Data Science and AI.</p>
+        </div>
+    </footer>
+</body>
+</html>
