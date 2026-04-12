@@ -348,36 +348,29 @@
         }
 
         .skill-category {
-            background: rgba(30, 41, 59, 0.5);
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(59, 130, 246, 0.05) 100%);
             border: 1px solid var(--border);
-            padding: 2rem;
             border-radius: 0.75rem;
-            position: relative;
+            overflow: hidden;
+            padding: 0 2rem 1.75rem;
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            border-color: var(--accent);
+            transform: translateY(-6px);
+            box-shadow: 0 16px 32px rgba(59, 130, 246, 0.18);
         }
 
         .skill-category h3 {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.65rem;
-            margin-bottom: 1.5rem;
-            font-size: 1.05rem;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            color: white;
+            margin: 0 -2rem 1.5rem;
+            padding: 1.1rem 2rem;
+            font-size: 1.2rem;
             font-weight: 700;
-            color: #dbeafe;
             letter-spacing: 0.01em;
-            padding: 0.55rem 0.95rem 0.55rem 0.8rem;
-            border-radius: 0.8rem;
-            border: 1px solid rgba(96, 165, 250, 0.45);
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.2) 0%, rgba(59, 130, 246, 0.08) 100%);
-            box-shadow: 0 8px 22px rgba(37, 99, 235, 0.14);
-        }
-
-        .skill-category h3::before {
-            content: "";
-            width: 0.36rem;
-            height: 1.15rem;
-            border-radius: 999px;
-            background: linear-gradient(180deg, #60a5fa 0%, #2563eb 100%);
-            box-shadow: 0 0 10px rgba(96, 165, 250, 0.6);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.18);
         }
 
         .skill-tag {
