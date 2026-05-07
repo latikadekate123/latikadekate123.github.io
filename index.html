@@ -927,20 +927,12 @@
                     </div>
                     <div class="project-body">
                         <div class="project-description">
-                            Designed and evaluated five adversarial poisoning variants (factual swap + semantic distortion) against a 5,000-doc RAG pipeline built on LangChain, ChromaDB, and Llama 3.1, measuring degradation across 1,000 NQ benchmark queries.
+                            Security-focused RAG study evaluating stealthy data poisoning across a 5,000-document retrieval pipeline.
                         </div>
                         <div class="project-details">
                             <div class="project-detail">
-                                <div class="project-detail-label">📈 Evaluation</div>
-                                <div class="project-detail-content">Measured retrieval and answer degradation across 1,000 Natural Questions queries; provided quantitative comparison across five poisoning variants.</div>
-                            </div>
-                            <div class="project-detail">
-                                <div class="project-detail-label">🔬 Analysis</div>
-                                <div class="project-detail-content">Analyzed embedding-space geometry showing poisoned docs overlap clean neighborhoods with near-zero embedding shift (mean AUC 0.527), highlighting limitations of anomaly detection.</div>
-                            </div>
-                            <div class="project-detail">
-                                <div class="project-detail-label">🛡️ Mitigation</div>
-                                <div class="project-detail-content">Benchmarked threshold vs Top-K capped mitigation strategies; found Top-K safer while quantifying defense limits for truth-preserving attacks.</div>
+                                <div class="project-detail-label">🎯 Impact</div>
+                                <div class="project-detail-content">Tested 5 poisoning variants on 1,000 benchmark queries; showed near-random anomaly separability (<strong>AUC 0.527</strong>) and identified Top-K capping as the safer mitigation.</div>
                             </div>
                             <div class="project-detail">
                                 <div class="project-detail-label">🛠️ Tech Stack</div>
