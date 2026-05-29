@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Latika Liladhar Dekate | Data Science & AI Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Syne:wght@600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -760,6 +763,351 @@
         .emoji {
             margin-right: 0.5rem;
         }
+
+        :root {
+            --bg-primary: #111111;
+            --bg-card: #1A1A1A;
+            --bg-card-border: #2A2A2A;
+            --text-primary: #F0EDE8;
+            --text-secondary: #A8A49F;
+            --accent-gold: #E8B84B;
+            --accent-red: #C0504A;
+            --accent-teal: #3A7CA5;
+            --accent-teal-hover: #4E8FB7;
+            --accent-green: #52855E;
+        }
+
+        html, body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        body {
+            background: var(--bg-primary);
+        }
+
+        h1, h2, h3, .logo {
+            font-family: 'Syne', sans-serif;
+            color: var(--text-primary);
+        }
+
+        .container {
+            max-width: 1100px;
+        }
+
+        section {
+            padding: 80px 0;
+            background: var(--bg-primary);
+            border-bottom: 1px solid var(--bg-card-border);
+        }
+
+        nav {
+            background: var(--bg-primary);
+            border-bottom: 1px solid var(--bg-card-border);
+            backdrop-filter: blur(10px);
+        }
+
+        nav .container {
+            max-width: 1100px;
+        }
+
+        .logo {
+            color: var(--accent-gold);
+        }
+
+        nav a {
+            position: relative;
+            display: inline-block;
+            color: var(--text-secondary);
+            padding-bottom: 0.15rem;
+        }
+
+        nav a:hover {
+            color: var(--accent-teal-hover);
+            box-shadow: inset 0 -1px 0 var(--accent-gold);
+        }
+
+        .hero {
+            background: var(--bg-primary);
+            border-bottom: 1px solid var(--bg-card-border);
+            padding: 80px 0;
+        }
+
+        .hero-content {
+            grid-template-columns: 1.25fr 0.75fr;
+            gap: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-bottom: 1rem;
+        }
+
+        .hero .title {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .hero p {
+            color: var(--text-secondary);
+        }
+
+        .hero-image img {
+            border: 4px solid var(--accent-teal);
+            box-shadow: 0 0 0 1px rgba(58, 124, 165, 0.35), 0 18px 38px rgba(0, 0, 0, 0.35);
+        }
+
+        .open-to-work {
+            background: var(--accent-green);
+            color: var(--bg-primary);
+            border-color: var(--accent-green);
+        }
+
+        .btn,
+        .project-link,
+        .contact-link {
+            color: var(--accent-teal);
+            transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .btn:hover,
+        .project-link:hover,
+        .contact-link:hover {
+            color: var(--accent-teal-hover);
+        }
+
+        .btn-primary {
+            background: var(--accent-teal);
+            border-color: var(--accent-teal);
+            color: var(--bg-primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-teal-hover);
+            border-color: var(--accent-teal-hover);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border-color: var(--accent-teal);
+            color: var(--accent-teal);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(58, 124, 165, 0.12);
+        }
+
+        .highlight-card,
+        .skill-category,
+        .project-card,
+        .experience-item,
+        .education-item,
+        .current-building-card {
+            background: var(--bg-card);
+            border: 1px solid var(--bg-card-border);
+            border-radius: 8px;
+            box-shadow: none;
+        }
+
+        .highlight-card:hover,
+        .skill-category:hover,
+        .project-card:hover,
+        .experience-item:hover,
+        .education-item:hover,
+        .current-building-card:hover {
+            border-color: rgba(58, 124, 165, 0.7);
+            transform: translateY(-4px);
+        }
+
+        .highlight-card .label,
+        .project-detail-label,
+        .experience-item li:before,
+        .label {
+            color: var(--accent-red);
+        }
+
+        h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--text-primary);
+            border-bottom: 1px solid var(--bg-card-border);
+            padding-bottom: 0.75rem;
+        }
+
+        .section-intro,
+        .highlight-card p,
+        .about-text p,
+        .project-description,
+        .project-detail-content,
+        .experience-item .company,
+        .education-item .institution,
+        .education-item p,
+        .contact-section p,
+        footer,
+        .project-date {
+            color: var(--text-secondary);
+        }
+
+        .about-content,
+        .hero-content {
+            gap: 24px;
+        }
+
+        .about-text p:first-of-type {
+            color: var(--text-primary);
+        }
+
+        .stat-box .number {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--accent-gold);
+        }
+
+        .skill-tag,
+        .tech-badge {
+            background: var(--bg-card-border);
+            color: var(--text-primary);
+            border: 1px solid var(--bg-card-border);
+            border-radius: 4px;
+            padding: 2px 8px;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 11px;
+            letter-spacing: 0.01em;
+        }
+
+        .skill-category h3,
+        .project-header h3,
+        .experience-item h3,
+        .education-item h3,
+        .current-building-card h3,
+        .highlight-card h3 {
+            font-family: 'Syne', sans-serif;
+            color: var(--text-primary);
+        }
+
+        .skill-category h3 {
+            background: transparent;
+            border-bottom: 1px solid var(--bg-card-border);
+            box-shadow: inset 0 -2px 0 var(--accent-gold);
+        }
+
+        .projects-grid,
+        .other-projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .project-header {
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--bg-card-border);
+            box-shadow: inset 0 -2px 0 var(--accent-teal);
+            color: var(--text-primary);
+        }
+
+        .project-header h3 a {
+            color: var(--accent-teal);
+        }
+
+        .project-header h3 a:hover {
+            color: var(--accent-teal-hover);
+        }
+
+        .project-date {
+            font-size: 0.85rem;
+            margin-top: 0.35rem;
+            margin-bottom: 0.15rem;
+            color: var(--text-secondary);
+        }
+
+        .project-tag {
+            background: var(--bg-card-border);
+            color: var(--text-secondary);
+            border: 1px solid var(--bg-card-border);
+            border-radius: 4px;
+        }
+
+        .project-body {
+            background: var(--bg-card);
+        }
+
+        .project-detail-content strong,
+        .project-description strong,
+        .stat-box .number {
+            color: var(--accent-gold);
+        }
+
+        .experience-item {
+            border-left: 3px solid var(--accent-green);
+        }
+
+        .experience-item .period {
+            color: var(--text-secondary);
+        }
+
+        .experience-item li:before {
+            color: var(--accent-red);
+        }
+
+        .current-building-card {
+            padding: 2rem;
+        }
+
+        .current-building-card p + p {
+            margin-top: 0.75rem;
+        }
+
+        .other-projects {
+            margin-top: 2rem;
+            border: 1px solid var(--bg-card-border);
+            border-radius: 8px;
+            background: var(--bg-card);
+            overflow: hidden;
+        }
+
+        .other-projects summary {
+            list-style: none;
+            cursor: pointer;
+            padding: 1rem 1.25rem;
+            font-family: 'Syne', sans-serif;
+            font-size: 1rem;
+            color: var(--text-primary);
+            border-bottom: 1px solid var(--bg-card-border);
+        }
+
+        .other-projects summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .other-projects[open] summary {
+            color: var(--accent-gold);
+        }
+
+        .other-projects .project-card {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .projects-grid,
+            .other-projects-grid,
+            .hero-content,
+            .about-content,
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -833,12 +1181,12 @@
         <div class="container">
             <h2>About Me</h2>
             <div class="section-intro">
-                Building Intelligent Systems that Bridge Data and Decision-Making.
+                Applied machine learning, retrieval systems, and production-minded data engineering.
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Building intelligent, data-driven systems that transform information into actionable decisions.</p>
-                    <p>I am a Data Science and AI Engineer currently pursuing my M.S. in Data Science at Arizona State University (GPA: 3.89), with a background in Electronics and Telecommunication Engineering. My work focuses on building end-to-end machine learning systems, including data pipelines, NLP-driven applications, and scalable AI architectures.</p>
+                    <p>I build end-to-end systems that move from data ingestion and modeling to evaluation and deployment, with a bias toward measurable impact.</p>
+                    <p>I am a Data Science and AI Engineer currently pursuing my M.S. in Data Science at Arizona State University (GPA: 3.89), with a background in Electronics and Telecommunication Engineering. My work focuses on GraphRAG, adversarial retrieval security, computer vision, and analytics tooling that can be handed to real users.</p>
                     <p>I specialize in applied machine learning, generative AI systems, and graph-based retrieval (GraphRAG), with hands-on experience in deploying models using modern engineering practices such as Docker, Kubernetes, and API-based architectures.</p>
                     <p>I have been recognized as a NASA Space Apps Challenge Regional Winner and hold a patent in wireless communication systems. Alongside technical work, I actively contribute to education by mentoring students and developing machine learning curricula.</p>
                 </div>
@@ -856,8 +1204,8 @@
                         <div class="label">Students Mentored in ML</div>
                     </div>
                     <div class="stat-box">
-                        <div class="number">25%</div>
-                        <div class="label">Organic Traffic Increase (SEO Project)</div>
+                        <div class="number">5,000-doc</div>
+                        <div class="label">RAG Pipeline — Adversarial Security Study</div>
                     </div>
                 </div>
             </div>
@@ -941,10 +1289,106 @@
                 End-to-end solutions showcasing AI, data engineering, and full-stack development.
             </div>
             <div class="projects-grid">
-                <!-- Project: Smart-Sighted SLAM -->
+                <!-- Featured Project 1 -->
                 <div class="project-card">
                     <div class="project-header">
-                        <h3>🤖 <a href="https://github.com/latikadekate123" class="project-link" target="_blank" style="color:inherit; text-decoration: none;">Smart-Sighted SLAM</a></h3>
+                        <h3>🔐 <a href="https://github.com/vpate160/KRR-Final-Project/commit/7f7ff9d" class="project-link" target="_blank">Stealthy Data Poisoning in RAG Systems</a></h3>
+                        <span class="project-date">March 2026 - April 2026</span>
+                        <span class="project-tag">Python · LangChain · ChromaDB · LLMs</span>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-description">
+                            Collaborative security-focused RAG study evaluating stealthy data poisoning across a 5,000-document retrieval pipeline.
+                        </div>
+                        <div class="project-details">
+                            <div class="project-detail">
+                                <div class="project-detail-label">🎯 Impact</div>
+                                <div class="project-detail-content">Tested 5 poisoning variants on 1,000 benchmark queries; showed near-random anomaly separability (<strong>AUC 0.527</strong>) and identified Top-K capping as the safer mitigation.</div>
+                            </div>
+                            <div class="project-detail">
+                                <div class="project-detail-label">🛠️ Tech Stack</div>
+                                <div class="tech-stack">
+                                    <span class="tech-badge">LangChain</span>
+                                    <span class="tech-badge">ChromaDB</span>
+                                    <span class="tech-badge">Llama 3.1</span>
+                                    <span class="tech-badge">Python</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/vpate160/KRR-Final-Project/commit/7f7ff9d" class="project-link">GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Featured Project 2 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>🧠 <a href="https://github.com/International-NASA-Space-App-Hackathon/AstraNode" class="project-link" target="_blank">AstraNode</a></h3>
+                        <span class="project-date">Oct 2025</span>
+                        <span class="project-tag">AI Research Intelligence</span>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-description">
+                            A GraphRAG system leveraging Neo4j to synthesize 600+ NASA research papers, enabling faster research discovery and knowledge synthesis.
+                        </div>
+                        <div class="project-details">
+                            <div class="project-detail">
+                                <div class="project-detail-label">🎯 Impact</div>
+                                <div class="project-detail-content"><strong>40% reduction</strong> in research discovery time through intelligent graph-based retrieval</div>
+                            </div>
+                            <div class="project-detail">
+                                <div class="project-detail-label">🛠️ Tech Stack</div>
+                                <div class="tech-stack">
+                                    <span class="tech-badge">Neo4j</span>
+                                    <span class="tech-badge">GraphRAG</span>
+                                    <span class="tech-badge">LangChain</span>
+                                    <span class="tech-badge">Python</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/International-NASA-Space-App-Hackathon/AstraNode" class="project-link">GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Featured Project 3 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>📊 <a href="https://github.com/latikadekate123/Advanced-Text-Analyzer" class="project-link" target="_blank">Advanced Text Analyzer</a></h3>
+                        <span class="project-date">Aug 2025 – Sep 2025</span>
+                        <span class="project-tag">Multi-Domain NLP</span>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-description">
+                            Interactive web application for multi-domain sentiment analysis with domain-specific fine-tuning (FinBERT) and Named Entity Recognition (SpaCy).
+                        </div>
+                        <div class="project-details">
+                            <div class="project-detail">
+                                <div class="project-detail-label">🎯 Impact</div>
+                                <div class="project-detail-content">Multi-domain sentiment analysis with 95%+ accuracy across financial, product, and general text classifications</div>
+                            </div>
+                            <div class="project-detail">
+                                <div class="project-detail-label">🛠️ Tech Stack</div>
+                                <div class="tech-stack">
+                                    <span class="tech-badge">FinBERT</span>
+                                    <span class="tech-badge">SpaCy</span>
+                                    <span class="tech-badge">Flask</span>
+                                    <span class="tech-badge">React</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/latikadekate123/Advanced-Text-Analyzer" class="project-link">GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Featured Project 4 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>🤖 <a href="https://github.com/latikadekate123" class="project-link" target="_blank">Smart-Sighted SLAM</a></h3>
                         <span class="project-date">Mar 2026 – May 2026</span>
                         <span class="project-tag">Python · ORB-SLAM3 · OpenCV · YOLO · RAFT · PyTorch</span>
                     </div>
@@ -974,234 +1418,10 @@
                     </div>
                 </div>
 
-                <!-- Project: Stealthy Data Poisoning in RAG Systems -->
+                <!-- Featured Project 5 -->
                 <div class="project-card">
                     <div class="project-header">
-                        <h3>🔐 <a href="https://github.com/vpate160/KRR-Final-Project" class="project-link" target="_blank" style="color:inherit; text-decoration: none;">Stealthy Data Poisoning in RAG Systems</a></h3>
-                        <span class="project-date">March 2026 - April 2026</span>
-                        <span class="project-tag">Python · LangChain · ChromaDB · LLMs</span>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-description">
-                            Security-focused RAG study evaluating stealthy data poisoning across a 5,000-document retrieval pipeline.
-                        </div>
-                        <div class="project-details">
-                            <div class="project-detail">
-                                <div class="project-detail-label">🎯 Impact</div>
-                                <div class="project-detail-content">Tested 5 poisoning variants on 1,000 benchmark queries; showed near-random anomaly separability (<strong>AUC 0.527</strong>) and identified Top-K capping as the safer mitigation.</div>
-                            </div>
-                            <div class="project-detail">
-                                <div class="project-detail-label">🛠️ Tech Stack</div>
-                                <div class="tech-stack">
-                                    <span class="tech-badge">LangChain</span>
-                                    <span class="tech-badge">ChromaDB</span>
-                                    <span class="tech-badge">Llama 3.1</span>
-                                    <span class="tech-badge">Python</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/vpate160/KRR-Final-Project" class="project-link">GitHub →</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project: Smart Team Manager -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>🚀 Smart Team Manager</h3>
-                        <span class="project-date">February 2026 - March 2026</span>
-                        <span class="project-tag">Real-time Collaboration</span>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-description">
-                            Enterprise team planning application with role-based workflows, real-time collaborative editing, and container-first architecture.
-                        </div>
-                        <div class="project-details">
-                            <div class="project-detail">
-                                <div class="project-detail-label">🎯 Impact</div>
-                                <div class="project-detail-content">Real-time sync for 50+ concurrent users with zero data conflicts via CRDTs</div>
-                            </div>
-                            <div class="project-detail">
-                                <div class="project-detail-label">🛠️ Tech Stack</div>
-                                <div class="tech-stack">
-                                    <span class="tech-badge">Go</span>
-                                    <span class="tech-badge">WebSockets</span>
-                                    <span class="tech-badge">Yjs CRDTs</span>
-                                    <span class="tech-badge">Docker</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/latikadekate123/Smart-Team-Manager" class="project-link">GitHub →</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project: AstraNode -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>🧠 AstraNode</h3>
-                        <span class="project-date">Oct 2025</span>
-                        <span class="project-tag">AI Research Intelligence</span>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-description">
-                            A GraphRAG system leveraging Neo4j to synthesize 600+ NASA research papers, enabling faster research discovery and knowledge synthesis.
-                        </div>
-                        <div class="project-details">
-                            <div class="project-detail">
-                                <div class="project-detail-label">🎯 Impact</div>
-                                <div class="project-detail-content"><strong>40% reduction</strong> in research discovery time through intelligent graph-based retrieval</div>
-                            </div>
-                            <div class="project-detail">
-                                <div class="project-detail-label">🛠️ Tech Stack</div>
-                                <div class="tech-stack">
-                                    <span class="tech-badge">Neo4j</span>
-                                    <span class="tech-badge">GraphRAG</span>
-                                    <span class="tech-badge">LangChain</span>
-                                    <span class="tech-badge">Python</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/latikadekate123" class="project-link">GitHub →</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project: Multimodal Fashion Recommender -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>👗 Multimodal Fashion Recommender</h3>
-                        <span class="project-date">September 2025</span>
-                        <span class="project-tag">Hackathon Project</span>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-description">
-                            Hybrid filtering system that combines text-based product metadata with rich image embeddings from a pre-trained CNN to enhance recommendation relevance and cold-start performance.
-                        </div>
-                        <div class="project-details">
-                            <div class="project-detail">
-                                <div class="project-detail-label">🎯 Impact</div>
-                                <div class="project-detail-content"><strong>Interactive Tinder-style UI</strong> accelerated user feedback collection; closed-loop evaluation pipeline integrated live user data for continuous model refinement</div>
-                            </div>
-                            <div class="project-detail">
-                                <div class="project-detail-label">🛠️ Tech Stack</div>
-                                <div class="tech-stack">
-                                    <span class="tech-badge">Python</span>
-                                    <span class="tech-badge">Streamlit</span>
-                                    <span class="tech-badge">Scikit-learn</span>
-                                    <span class="tech-badge">CNN</span>
-                                    <span class="tech-badge">Hybrid Filtering</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/latikadekate123/Flawless-Fashion" class="project-link">GitHub →</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project: Advanced Text Analyzer -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>📊 Advanced Text Analyzer</h3>
-                        <span class="project-date">Aug 2025 – Sep 2025</span>
-                        <span class="project-tag">Multi-Domain NLP</span>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-description">
-                            Interactive web application for multi-domain sentiment analysis with domain-specific fine-tuning (FinBERT) and Named Entity Recognition (SpaCy).
-                        </div>
-                        <div class="project-details">
-                            <div class="project-detail">
-                                <div class="project-detail-label">🎯 Impact</div>
-                                <div class="project-detail-content">Multi-domain sentiment analysis with 95%+ accuracy across financial, product, and general text classifications</div>
-                            </div>
-                            <div class="project-detail">
-                                <div class="project-detail-label">🛠️ Tech Stack</div>
-                                <div class="tech-stack">
-                                    <span class="tech-badge">FinBERT</span>
-                                    <span class="tech-badge">SpaCy</span>
-                                    <span class="tech-badge">Flask</span>
-                                    <span class="tech-badge">React</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/latikadekate123/Advanced-Text-Analyzer" class="project-link">GitHub →</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project: Smart Grid Energy Analytics -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>⚡ Smart Grid Energy Analytics</h3>
-                        <span class="project-date">Jul 2025 – Aug 2025</span>
-                        <span class="project-tag">ETL & Anomaly Detection</span>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-description">
-                            Complete ETL pipeline with interactive Streamlit dashboard for household energy consumption anomaly detection using Z-score methodology.
-                        </div>
-                        <div class="project-details">
-                            <div class="project-detail">
-                                <div class="project-detail-label">🎯 Impact</div>
-                                <div class="project-detail-content">Detects unusual consumption patterns with Z-score methodology; visualizes trends and anomalies real-time</div>
-                            </div>
-                            <div class="project-detail">
-                                <div class="project-detail-label">🛠️ Tech Stack</div>
-                                <div class="tech-stack">
-                                    <span class="tech-badge">Python</span>
-                                    <span class="tech-badge">ETL Pipeline</span>
-                                    <span class="tech-badge">Streamlit</span>
-                                    <span class="tech-badge">UCI Dataset</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/latikadekate123/Smartgrid-Power-System-Load-Forecasting" class="project-link">GitHub →</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project: System Health Monitor -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>🏥 System Health Monitor</h3>
-                        <span class="project-date">July 2025</span>
-                        <span class="project-tag">DevOps Tool</span>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-description">
-                            Pure Bash system monitoring tool with real-time desktop notifications and logging for disk usage, memory, CPU, and system uptime tracking.
-                        </div>
-                        <div class="project-details">
-                            <div class="project-detail">
-                                <div class="project-detail-label">🎯 Impact</div>
-                                <div class="project-detail-content">Lightweight monitoring without Heavy CLI overhead; real-time alerts with sound notifications</div>
-                            </div>
-                            <div class="project-detail">
-                                <div class="project-detail-label">🛠️ Tech Stack</div>
-                                <div class="tech-stack">
-                                    <span class="tech-badge">Bash</span>
-                                    <span class="tech-badge">System Monitoring</span>
-                                    <span class="tech-badge">Notifications</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/latikadekate123/System-Health-Monitor-on-Ubuntu" class="project-link">GitHub →</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project: CityPulse Smart Transit -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>🚌 CityPulse Smart Transit</h3>
+                        <h3>🚌 <a href="https://github.com/latikadekate123/City-Pulse-Smart-Transit-System-using-SQL" class="project-link" target="_blank">CityPulse Smart Transit</a></h3>
                         <span class="project-date">June 2025 - July 2025</span>
                         <span class="project-tag">Analytics Dashboard</span>
                     </div>
@@ -1230,6 +1450,119 @@
                     </div>
                 </div>
             </div>
+
+            <details class="other-projects">
+                <summary>Other Projects</summary>
+                <div class="other-projects-grid" style="padding: 24px;">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>🚀 <a href="https://github.com/latikadekate123/Smart-Team-Manager" class="project-link" target="_blank">Smart Team Manager</a></h3>
+                            <span class="project-date">February 2026 - March 2026</span>
+                            <span class="project-tag">Real-time Collaboration</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-description">Enterprise team planning application with role-based workflows, real-time collaborative editing, and container-first architecture.</div>
+                            <div class="project-details">
+                                <div class="project-detail">
+                                    <div class="project-detail-label">🎯 Impact</div>
+                                    <div class="project-detail-content">Real-time sync for 50+ concurrent users with zero data conflicts via CRDTs</div>
+                                </div>
+                                <div class="project-detail">
+                                    <div class="project-detail-label">🛠️ Tech Stack</div>
+                                    <div class="tech-stack">
+                                        <span class="tech-badge">Go</span>
+                                        <span class="tech-badge">WebSockets</span>
+                                        <span class="tech-badge">Yjs CRDTs</span>
+                                        <span class="tech-badge">Docker</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-links"><a href="https://github.com/latikadekate123/Smart-Team-Manager" class="project-link">GitHub →</a></div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>🏥 <a href="https://github.com/latikadekate123/System-Health-Monitor-on-Ubuntu" class="project-link" target="_blank">System Health Monitor</a></h3>
+                            <span class="project-date">July 2025</span>
+                            <span class="project-tag">DevOps Tool</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-description">Pure Bash system monitoring tool with real-time desktop notifications and logging for disk usage, memory, CPU, and system uptime tracking.</div>
+                            <div class="project-details">
+                                <div class="project-detail">
+                                    <div class="project-detail-label">🎯 Impact</div>
+                                    <div class="project-detail-content">Lightweight monitoring without heavy CLI overhead; real-time alerts with sound notifications</div>
+                                </div>
+                                <div class="project-detail">
+                                    <div class="project-detail-label">🛠️ Tech Stack</div>
+                                    <div class="tech-stack">
+                                        <span class="tech-badge">Bash</span>
+                                        <span class="tech-badge">System Monitoring</span>
+                                        <span class="tech-badge">Notifications</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-links"><a href="https://github.com/latikadekate123/System-Health-Monitor-on-Ubuntu" class="project-link">GitHub →</a></div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>⚡ <a href="https://github.com/latikadekate123/Smartgrid-Power-System-Load-Forecasting" class="project-link" target="_blank">Smart Grid Energy Analytics</a></h3>
+                            <span class="project-date">Jul 2025 – Aug 2025</span>
+                            <span class="project-tag">ETL & Anomaly Detection</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-description">Complete ETL pipeline with interactive Streamlit dashboard for household energy consumption anomaly detection using Z-score methodology.</div>
+                            <div class="project-details">
+                                <div class="project-detail">
+                                    <div class="project-detail-label">🎯 Impact</div>
+                                    <div class="project-detail-content">Detects unusual consumption patterns with Z-score methodology; visualizes trends and anomalies in real time</div>
+                                </div>
+                                <div class="project-detail">
+                                    <div class="project-detail-label">🛠️ Tech Stack</div>
+                                    <div class="tech-stack">
+                                        <span class="tech-badge">Python</span>
+                                        <span class="tech-badge">ETL Pipeline</span>
+                                        <span class="tech-badge">Streamlit</span>
+                                        <span class="tech-badge">UCI Dataset</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-links"><a href="https://github.com/latikadekate123/Smartgrid-Power-System-Load-Forecasting" class="project-link">GitHub →</a></div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>👗 <a href="https://github.com/latikadekate123/Flawless-Fashion" class="project-link" target="_blank">Multimodal Fashion Recommender</a></h3>
+                            <span class="project-date">September 2025</span>
+                            <span class="project-tag">Hackathon Project</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-description">Hybrid filtering system that combines text-based product metadata with rich image embeddings from a pre-trained CNN to enhance recommendation relevance and cold-start performance.</div>
+                            <div class="project-details">
+                                <div class="project-detail">
+                                    <div class="project-detail-label">🎯 Impact</div>
+                                    <div class="project-detail-content"><strong>Interactive Tinder-style UI</strong> accelerated user feedback collection; closed-loop evaluation integrated live user data for continuous model refinement</div>
+                                </div>
+                                <div class="project-detail">
+                                    <div class="project-detail-label">🛠️ Tech Stack</div>
+                                    <div class="tech-stack">
+                                        <span class="tech-badge">Python</span>
+                                        <span class="tech-badge">Streamlit</span>
+                                        <span class="tech-badge">Scikit-learn</span>
+                                        <span class="tech-badge">CNN</span>
+                                        <span class="tech-badge">Hybrid Filtering</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-links"><a href="https://github.com/latikadekate123/Flawless-Fashion" class="project-link">GitHub →</a></div>
+                        </div>
+                    </div>
+                </div>
+            </details>
         </div>
     </section>
 
@@ -1246,10 +1579,8 @@
                 <div class="company">Google Developer Student Clubs (GDSC) @ SIES Graduate School of Technology, India</div>
                 <div class="period">June 2022 — April 2024</div>
                 <ul>
-                    <li>Led 10-week comprehensive ML curriculum for 150+ students covering foundational to advanced topics</li>
-                    <li>Increased project completion rate by 15% through structured mentoring and hands-on learning</li>
-                    <li>Designed and delivered practical ML workshops on PyTorch, TensorFlow, and real-world applications</li>
-                    <li>Coached student projects to deployment, fostering full-stack ML engineering practices</li>
+                    <li>Led 10-week ML curriculum for 150+ students, improving project completion by 15% through structured mentoring.</li>
+                    <li>Designed and delivered workshops on PyTorch and TensorFlow while coaching student projects to deployment.</li>
                 </ul>
             </div>
 
@@ -1258,10 +1589,8 @@
                 <div class="company">Help for Coders</div>
                 <div class="period">December 2021 — April 2023</div>
                 <ul>
-                    <li>Designed and implemented a Python-based cohort analysis pipeline to track user engagement metrics</li>
-                    <li>Delivered insights that drove 25% increase in organic traffic through data-driven optimization</li>
-                    <li>Automated repetitive ETL tasks, reducing manual reporting by 40%</li>
-                    <li>Collaborated with marketing team to identify high-value user segments and personalization opportunities</li>
+                    <li>Delivered insights that drove a 25% increase in organic traffic through data-driven optimization.</li>
+                    <li>Built a Python cohort-analysis pipeline and automated repetitive ETL and reporting tasks.</li>
                 </ul>
             </div>
 
@@ -1270,10 +1599,8 @@
                 <div class="company">SIES Graduate School of Technology, India</div>
                 <div class="period">June 2022 — July 2022</div>
                 <ul>
-                    <li>Improved object detection model performance by 10% through hyperparameter tuning and data augmentation</li>
-                    <li>Developed image-processing pipelines for research projects and prototyped model improvements</li>
-                    <li>Implemented data cleaning and feature engineering pipelines for production models</li>
-                    <li>Documented end-to-end ML workflows and best practices for team knowledge transfer</li>
+                    <li>Improved object detection performance by 10% through hyperparameter tuning and data augmentation.</li>
+                    <li>Developed image-processing and feature-engineering pipelines for research models and documentation.</li>
                 </ul>
             </div>
         </div>
@@ -1318,25 +1645,16 @@
         </div>
     </section>
 
-    <!-- Achievement Section -->
-    <section id="achievements">
+    <!-- Currently Building Section -->
+    <section id="currently-building">
         <div class="container">
-            <h2>Achievement</h2>
+            <h2>Currently Building</h2>
             <div class="section-intro">
-                A quick view of the two recognitions that best represent my research and engineering work.
+                Research I am actively advancing at ASU.
             </div>
-
-            <div class="achievement-grid">
-                <div class="highlight-card">
-                    <div class="label">🚀 NASA Win</div>
-                    <h3>NASA Space Apps Challenge</h3>
-                    <p>Regional Winner & Global Nominee for building an impactful solution in a competitive international hackathon.</p>
-                </div>
-                <div class="highlight-card">
-                    <div class="label">📜 Patent Project</div>
-                    <h3>Multilayer Microstrip Aerial Transmitter Receptor</h3>
-                    <p>Patent completed as part of my bachelor’s final year project for Wi-Fi applications in telecommunications.</p>
-                </div>
+            <div class="current-building-card">
+                <h3>DaRL Lab LibSignal Research</h3>
+                <p>Working under Dr. Hua Wei at ASU SCAI on LibSignal, with a focus on signal-aware language systems and reproducible experimentation. The work emphasizes evaluation rigor, research tooling, and turning lab prototypes into measurable systems.</p>
             </div>
         </div>
     </section>
@@ -1371,7 +1689,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Latika Liladhar Dekate. Designed & Built with passion for Data Science and AI.</p>
+            <p>&copy; 2025 Latika Liladhar Dekate. Currently seeking Summer 2026 AI/ML internships. Open to full-time roles from Jan 2027.</p>
         </div>
     </footer>
 </body>
