@@ -104,7 +104,10 @@
         /* Hero Section */
         .hero {
             margin-top: 80px;
-            padding: 6rem 2rem;
+            min-height: calc(100vh - 80px);
+            display: flex;
+            align-items: center;
+            padding: 4rem 2rem 5rem;
             text-align: center;
             background: linear-gradient(180deg, rgba(58, 124, 165, 0.08) 0%, rgba(17, 17, 17, 0) 100%);
             border-bottom: 1px solid var(--border);
@@ -765,353 +768,306 @@
         }
 
         :root {
-            --bg-primary: #111111;
-            --bg-card: #1A1A1A;
-            --bg-card-border: #2A2A2A;
-            --text-primary: #F0EDE8;
-            --text-secondary: #A8A49F;
-            --accent-gold: #E8B84B;
-            --accent-red: #C0504A;
-            --accent-teal: #3A7CA5;
-            --accent-teal-hover: #4E8FB7;
-            --accent-green: #52855E;
+            --bg-primary: #dfe9ec;
+            --bg-secondary: #d4e1e5;
+            --bg-card: rgba(247, 250, 251, 0.88);
+            --bg-card-border: rgba(61, 91, 99, 0.18);
+            --text-primary: #162126;
+            --text-secondary: #475c63;
+            --text-muted: #677a81;
+            --accent-gold: #b98a43;
+            --accent-red: #b36555;
+            --accent-teal: #1d6a73;
+            --accent-teal-hover: #155059;
+            --accent-green: #4b7d67;
+            --shadow-soft: 0 18px 40px rgba(29, 62, 72, 0.08);
         }
 
         html, body {
-            background: var(--bg-primary);
+            background:
+                radial-gradient(circle at top left, rgba(185, 138, 67, 0.10), transparent 28%),
+                radial-gradient(circle at top right, rgba(29, 106, 115, 0.10), transparent 26%),
+                linear-gradient(180deg, #e7eef1 0%, #dce7ea 100%);
             color: var(--text-primary);
             font-family: 'Inter', sans-serif;
             font-size: 15px;
             line-height: 1.7;
         }
 
-        body {
-            background: var(--bg-primary);
-        }
-
-        h1, h2, h3, .logo {
-            font-family: 'Syne', sans-serif;
-            color: var(--text-primary);
-        }
-
-        .container {
-            max-width: 1100px;
-        }
-
-        section {
-            padding: 80px 0;
-            background: var(--bg-primary);
-            border-bottom: 1px solid var(--bg-card-border);
-        }
-
+        body { background-attachment: fixed; }
+        .container, nav .container { max-width: 1320px; }
         nav {
-            background: var(--bg-primary);
-            border-bottom: 1px solid var(--bg-card-border);
-            backdrop-filter: blur(10px);
+            background: rgba(198, 212, 218, 0.96);
+            border-bottom: 1px solid rgba(61, 91, 99, 0.22);
+            backdrop-filter: blur(16px);
+            box-shadow: 0 8px 24px rgba(29, 62, 72, 0.08);
         }
-
-        nav .container {
-            max-width: 1100px;
+        .logo, h1, h2, h3 { font-family: 'Syne', sans-serif; color: var(--text-primary); }
+        nav ul {
+            background: rgba(255, 255, 255, 0.34);
+            border: 1px solid rgba(61, 91, 99, 0.12);
+            border-radius: 999px;
+            padding: 0.45rem 0.7rem;
+            gap: 0.35rem;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.35);
         }
-
-        .logo {
-            color: var(--accent-gold);
-        }
-
         nav a {
             position: relative;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 40px;
+            padding: 0 1rem;
+            border-radius: 999px;
             color: var(--text-secondary);
-            padding-bottom: 0.15rem;
-        }
-
-        nav a:hover {
-            color: var(--accent-teal-hover);
-            box-shadow: inset 0 -1px 0 var(--accent-gold);
-        }
-
-        .hero {
-            background: var(--bg-primary);
-            border-bottom: 1px solid var(--bg-card-border);
-            padding: 80px 0;
-        }
-
-        .hero-content {
-            grid-template-columns: 1.25fr 0.75fr;
-            gap: 3rem;
-        }
-
-        .hero h1 {
-            font-size: 48px;
-            font-weight: 700;
-            letter-spacing: -0.03em;
-            margin-bottom: 1rem;
-        }
-
-        .hero .title {
-            color: var(--text-secondary);
-            font-size: 1rem;
-            font-weight: 500;
-        }
-
-        .hero p {
-            color: var(--text-secondary);
-        }
-
-        .hero-image img {
-            border: 4px solid var(--accent-teal);
-            box-shadow: 0 0 0 1px rgba(58, 124, 165, 0.35), 0 18px 38px rgba(0, 0, 0, 0.35);
-        }
-
-        .open-to-work {
-            background: var(--accent-green);
-            color: var(--bg-primary);
-            border-color: var(--accent-green);
-        }
-
-        .btn,
-        .project-link,
-        .contact-link {
-            color: var(--accent-teal);
-            transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
-        }
-
-        .btn:hover,
-        .project-link:hover,
-        .contact-link:hover {
-            color: var(--accent-teal-hover);
-        }
-
-        .btn-primary {
-            background: var(--accent-teal);
-            border-color: var(--accent-teal);
-            color: var(--bg-primary);
-        }
-
-        .btn-primary:hover {
-            background: var(--accent-teal-hover);
-            border-color: var(--accent-teal-hover);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            border-color: var(--accent-teal);
-            color: var(--accent-teal);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(58, 124, 165, 0.12);
-        }
-
-        .highlight-card,
-        .skill-category,
-        .project-card,
-        .experience-item,
-        .education-item,
-        .current-building-card {
-            background: var(--bg-card);
-            border: 1px solid var(--bg-card-border);
-            border-radius: 8px;
-            box-shadow: none;
-        }
-
-        .highlight-card:hover,
-        .skill-category:hover,
-        .project-card:hover,
-        .experience-item:hover,
-        .education-item:hover,
-        .current-building-card:hover {
-            border-color: rgba(58, 124, 165, 0.7);
-            transform: translateY(-4px);
-        }
-
-        .highlight-card .label,
-        .project-detail-label,
-        .experience-item li:before,
-        .label {
-            color: var(--accent-red);
-        }
-
-        h2 {
-            font-family: 'Syne', sans-serif;
-            font-size: 28px;
             font-weight: 600;
-            color: var(--text-primary);
-            border-bottom: 1px solid var(--bg-card-border);
-            padding-bottom: 0.75rem;
+            transition: color 0.22s ease, background 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease;
         }
-
-        .section-intro,
-        .highlight-card p,
-        .about-text p,
-        .project-description,
-        .project-detail-content,
-        .experience-item .company,
-        .education-item .institution,
-        .education-item p,
-        .contact-section p,
-        footer,
-        .project-date {
-            color: var(--text-secondary);
-        }
-
-        .about-content,
-        .hero-content {
-            gap: 24px;
-        }
-
-        .about-text p:first-of-type {
-            color: var(--text-primary);
-        }
-
-        .stat-box .number {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 36px;
-            font-weight: 700;
-            color: var(--accent-gold);
-        }
-
-        .skill-tag,
-        .tech-badge {
-            background: var(--bg-card-border);
-            color: var(--text-primary);
-            border: 1px solid var(--bg-card-border);
-            border-radius: 4px;
-            padding: 2px 8px;
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 11px;
-            letter-spacing: 0.01em;
-        }
-
-        .skill-category h3,
-        .project-header h3,
-        .experience-item h3,
-        .education-item h3,
-        .current-building-card h3,
-        .highlight-card h3 {
-            font-family: 'Syne', sans-serif;
-            color: var(--text-primary);
-        }
-
-        .skill-category h3 {
-            background: transparent;
-            border-bottom: 1px solid var(--bg-card-border);
-            box-shadow: inset 0 -2px 0 var(--accent-gold);
-        }
-
-        .projects-grid,
-        .other-projects-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 24px;
-        }
-
-        .project-header {
-            background: var(--bg-card);
-            border-bottom: 1px solid var(--bg-card-border);
-            box-shadow: inset 0 -2px 0 var(--accent-teal);
-            color: var(--text-primary);
-        }
-
-        .project-header h3 a {
+        nav a:hover {
             color: var(--accent-teal);
+            background: rgba(255,255,255,0.5);
+            box-shadow: inset 0 -2px 0 rgba(185, 138, 67, 0.9);
+            transform: translateY(-1px);
         }
-
-        .project-header h3 a:hover {
-            color: var(--accent-teal-hover);
+        section {
+            padding: 84px 0;
+            background: transparent;
+            border-top: 1px solid rgba(255, 255, 255, 0.34);
+            border-bottom: 1px solid rgba(61, 91, 99, 0.10);
+            position: relative;
         }
-
-        .project-date {
-            font-size: 0.85rem;
-            margin-top: 0.35rem;
-            margin-bottom: 0.15rem;
-            color: var(--text-secondary);
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(1120px, calc(100% - 4rem));
+            height: 1px;
+            background: linear-gradient(90deg, rgba(29, 106, 115, 0), rgba(29, 106, 115, 0.18), rgba(185, 138, 67, 0.18), rgba(29, 106, 115, 0));
+            pointer-events: none;
         }
-
-        .project-tag {
-            background: var(--bg-card-border);
-            color: var(--text-secondary);
-            border: 1px solid var(--bg-card-border);
-            border-radius: 4px;
-        }
-
-        .project-body {
-            background: var(--bg-card);
-        }
-
-        .project-detail-content strong,
-        .project-description strong,
-        .stat-box .number {
-            color: var(--accent-gold);
-        }
-
-        .experience-item {
-            border-left: 3px solid var(--accent-green);
-        }
-
-        .experience-item .period {
-            color: var(--text-secondary);
-        }
-
-        .experience-item li:before {
-            color: var(--accent-red);
-        }
-
-        .current-building-card {
-            padding: 2rem;
-        }
-
-        .current-building-card p + p {
-            margin-top: 0.75rem;
-        }
-
-        .other-projects {
-            margin-top: 2rem;
-            border: 1px solid var(--bg-card-border);
-            border-radius: 8px;
-            background: var(--bg-card);
-            overflow: hidden;
-        }
-
-        .other-projects summary {
-            list-style: none;
-            cursor: pointer;
-            padding: 1rem 1.25rem;
-            font-family: 'Syne', sans-serif;
-            font-size: 1rem;
-            color: var(--text-primary);
-            border-bottom: 1px solid var(--bg-card-border);
-        }
-
-        .other-projects summary::-webkit-details-marker {
+        .hero::before,
+        .hero + section::before {
             display: none;
         }
-
-        .other-projects[open] summary {
-            color: var(--accent-gold);
+        h2 { font-size: 2.15rem; padding-bottom: 0.9rem; border-bottom: 1px solid rgba(126, 96, 58, 0.16); }
+        .section-intro, .project-date, .education-item .institution, .education-item p, .experience-item .company, .experience-item .period, .contact-section p, footer, .highlight-card p, .about-text p, .stat-box .label { color: var(--text-secondary); }
+        .hero {
+            background: transparent;
+            border-bottom: 1px solid rgba(61, 91, 99, 0.14);
+            padding: 2rem 0;
         }
-
-        .other-projects .project-card {
+        .hero .container {
+            max-width: 1320px;
+            display: flex;
+            align-items: stretch;
+        }
+        .hero-inner {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            gap: 1.6rem;
+            min-height: calc(100vh - 80px - 4rem);
+            width: 100%;
+        }
+        .hero-content {
+            grid-template-columns: minmax(0, 1.02fr) minmax(320px, 0.82fr);
+            gap: 2rem;
+            width: 100%;
+            align-items: center;
+        }
+        .hero-text {
+            max-width: 660px;
+            margin: 0 auto 0 0;
+        }
+        .hero h1 {
+            font-size: clamp(2.7rem, 5vw, 3.8rem);
+            line-height: 1.04;
+            margin-bottom: 0.8rem;
+        }
+        .hero p {
+            max-width: 700px;
+        }
+        .hero .title {
+            font-size: 0.98rem;
+            line-height: 1.62;
+            max-width: 760px;
+        }
+        .hero-text > p:not(.title):not(.open-to-work) {
+            font-size: 0.98rem;
+        }
+        .hero-image {
+            justify-content: center;
+        }
+        .hero .title { color: var(--text-secondary); font-size: 1.02rem; }
+        .hero-image img {
+            border: 6px solid rgba(255, 255, 255, 0.78);
+            outline: 8px solid rgba(29, 106, 115, 0.38);
+            outline-offset: 10px;
+            box-shadow:
+                0 28px 60px rgba(29, 62, 72, 0.14),
+                0 0 0 18px rgba(255, 255, 255, 0.18);
+            width: min(25vw, 330px);
+            height: min(25vw, 330px);
+        }
+        .hero-text .open-to-work {
+            margin: 0.45rem 0 1.1rem;
+        }
+        .hero-text .cta-buttons {
+            margin-top: 0.1rem;
+        }
+        .open-to-work { background: rgba(79, 122, 82, 0.12); color: var(--accent-green); border-color: rgba(79, 122, 82, 0.28); }
+        .btn-primary, .button-link { background: var(--accent-teal); border: 1px solid var(--accent-teal); color: #fff; box-shadow: 0 8px 18px rgba(37, 107, 111, 0.18); transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease, border-color 0.22s ease; }
+        .btn-primary:hover, .button-link:hover { background: var(--accent-teal-hover); border-color: var(--accent-teal-hover); color: #fff; transform: translateY(-3px) scale(1.02); box-shadow: 0 14px 28px rgba(29, 106, 115, 0.22); }
+        .btn-secondary, .secondary-link { background: transparent; border: 1px solid rgba(37, 107, 111, 0.22); color: var(--accent-teal); transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease, border-color 0.22s ease; }
+        .btn-secondary:hover, .secondary-link:hover { background: rgba(37, 107, 111, 0.08); color: var(--accent-teal-hover); transform: translateY(-3px) scale(1.02); box-shadow: 0 12px 26px rgba(29, 106, 115, 0.12); }
+        .highlight-card, .skill-category, .project-card, .experience-item, .education-item, .current-building-card, .recognition-card, .stat-box, .contact-shell {
+            background: var(--bg-card);
+            border: 1px solid var(--bg-card-border);
+            border-radius: 18px;
+            box-shadow: var(--shadow-soft);
+            backdrop-filter: blur(8px);
+            outline: 1px solid rgba(255, 255, 255, 0.52);
+            outline-offset: -1px;
+            transition:
+                transform 0.28s ease,
+                box-shadow 0.28s ease,
+                border-color 0.28s ease,
+                background 0.28s ease,
+                outline-color 0.28s ease;
+        }
+        .highlight-card:hover, .skill-category:hover, .project-card:hover, .experience-item:hover, .education-item:hover, .recognition-card:hover, .stat-box:hover, .contact-shell:hover {
+            transform: translateY(-12px) scale(1.018);
+            border-color: rgba(29, 106, 115, 0.34);
+            outline-color: rgba(185, 138, 67, 0.35);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.99) 0%, rgba(240, 249, 250, 0.98) 100%);
+            box-shadow:
+                0 34px 68px rgba(29, 62, 72, 0.16),
+                0 0 0 4px rgba(29, 106, 115, 0.08);
+        }
+        .highlights { gap: 1.25rem; padding: 2rem 0 0; margin-bottom: 0; }
+        .highlights .highlight-card, .skill-category, .experience-item, .education-item, .recognition-card { padding: 1.5rem; }
+        .highlight-card .label, .recognition-label { color: var(--accent-red); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.75rem; }
+        .hero-highlights {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1rem;
+            align-items: stretch;
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+        .hero-highlights .highlight-card {
+            padding: 1rem 1rem 0.95rem;
+            min-height: 100%;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(244, 249, 250, 0.86) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+        .hero-highlights .highlight-card h3 {
+            font-size: 1rem;
+            line-height: 1.32;
+            margin-bottom: 0.45rem;
+            font-weight: 700;
+        }
+        .hero-highlights .highlight-card p {
+            font-size: 0.88rem;
+            line-height: 1.5;
             margin: 0;
         }
-
-        #currently-building {
-            display: none;
+        .hero-highlights .label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            font-size: 0.76rem;
+            font-weight: 800;
+            letter-spacing: 0.09em;
+            margin-bottom: 0.65rem;
         }
-
-        @media (max-width: 768px) {
-            .projects-grid,
-            .other-projects-grid,
-            .hero-content,
-            .about-content,
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero h1 {
-                font-size: 36px;
-            }
+        .about-content { grid-template-columns: 1.1fr 0.9fr; gap: 2rem; }
+        .about-stats { gap: 1rem; }
+        .stat-box .number { font-family: 'IBM Plex Mono', monospace; color: var(--accent-gold); font-size: 2rem; transition: transform 0.24s ease, color 0.24s ease; }
+        .stat-box:hover .number { transform: translateY(-2px) scale(1.02); color: var(--accent-teal); }
+        .skills-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+        .skill-category { padding: 0 1.35rem 1.35rem; }
+        .skill-category h3 { margin: 0 -1.35rem 1rem; padding: 1rem 1.35rem; background: rgba(184, 135, 70, 0.08); border-bottom: 1px solid rgba(126, 96, 58, 0.12); box-shadow: none; }
+        .skill-tag, .project-tag, .project-chip { display: inline-flex; align-items: center; gap: 0.25rem; padding: 0.36rem 0.7rem; border-radius: 999px; background: rgba(37, 107, 111, 0.08); color: var(--accent-teal); border: 1px solid rgba(37, 107, 111, 0.12); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; letter-spacing: 0.01em; margin: 0 0.45rem 0.45rem 0; }
+        .project-filters { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: -0.75rem 0 2rem; }
+        .filter-chip { appearance: none; border: 1px solid rgba(29, 106, 115, 0.14); background: rgba(255,255,255,0.62); color: var(--text-secondary); padding: 0.7rem 1rem; border-radius: 999px; font: 600 0.82rem 'IBM Plex Mono', monospace; cursor: pointer; transition: all 0.22s ease; }
+        .filter-chip:hover, .filter-chip.is-active { background: var(--accent-teal); color: #fff; border-color: var(--accent-teal); transform: translateY(-2px) scale(1.02); box-shadow: 0 10px 18px rgba(29, 106, 115, 0.14); }
+        .projects-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.4rem; align-items: stretch; }
+        .project-card { overflow: hidden; padding: 0; position: relative; }
+        .project-header { background: linear-gradient(180deg, rgba(184, 135, 70, 0.08) 0%, rgba(255,255,255,0) 100%); padding: 1.35rem 1.35rem 1rem; border-bottom: 1px solid rgba(126, 96, 58, 0.10); box-shadow: none; }
+        .project-header h3 { font-size: 1.15rem; line-height: 1.3; margin-bottom: 0.8rem; }
+        .project-header h3 a { color: var(--text-primary); }
+        .project-header h3 a:hover { color: var(--accent-teal); }
+        .project-meta-row { display: flex; justify-content: space-between; align-items: center; gap: 0.75rem; margin-bottom: 0.85rem; flex-wrap: wrap; }
+        .project-date { margin: 0; font-size: 0.82rem; font-family: 'IBM Plex Mono', monospace; }
+        .project-tag-list { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+        .project-body { padding: 1.2rem 1.35rem 1.35rem; display: flex; flex-direction: column; gap: 0.8rem; background: transparent; }
+        .project-problem { color: var(--text-primary); font-weight: 600; line-height: 1.55; }
+        .project-summary, .project-result { color: var(--text-secondary); line-height: 1.65; font-size: 0.95rem; }
+        .project-result strong { color: var(--accent-gold); }
+        .project-links { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: auto; padding-top: 0.25rem; }
+        .project-link { text-decoration: none; }
+        .button-link { display: inline-flex; align-items: center; justify-content: center; min-height: 40px; padding: 0.62rem 0.95rem; border-radius: 12px; font-weight: 600; font-size: 0.88rem; }
+        .featured-project { box-shadow: 0 20px 44px rgba(37, 107, 111, 0.08); }
+        .project-card::after { content: ''; position: absolute; inset: auto 0 0 0; height: 3px; background: linear-gradient(90deg, rgba(184, 135, 70, 0), rgba(184, 135, 70, 0.65), rgba(37, 107, 111, 0.65), rgba(37, 107, 111, 0)); transform: scaleX(0.35); transform-origin: center; transition: transform 0.25s ease; }
+        .project-card:hover::after { transform: scaleX(1); }
+        .project-header,
+        .project-body,
+        .highlight-card h3,
+        .skill-category h3,
+        .recognition-card h3,
+        .experience-item h3,
+        .education-item h3,
+        .stat-box,
+        .highlight-card,
+        .skill-category,
+        .recognition-card,
+        .education-item,
+        .experience-item { transition: transform 0.22s ease; }
+        .project-card:hover .project-header,
+        .project-card:hover .project-body,
+        .highlight-card:hover h3,
+        .skill-category:hover h3,
+        .recognition-card:hover h3,
+        .experience-item:hover h3,
+        .education-item:hover h3,
+        .stat-box:hover { transform: translateY(-2px); }
+        .project-card.is-hidden { display: none; }
+        .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.55s ease, transform 0.55s ease; }
+        .reveal.is-visible { opacity: 1; transform: translateY(0); }
+        .experience-item { border-left: none; position: relative; }
+        .experience-item::before { content: ''; position: absolute; left: 0; top: 1.2rem; bottom: 1.2rem; width: 4px; border-radius: 999px; background: linear-gradient(180deg, var(--accent-teal), var(--accent-gold)); }
+        .experience-item li:before { content: '*'; color: var(--accent-red); }
+        .education-item .details { gap: 0.65rem 1rem; }
+        .recognition-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+        .recognition-card h3 { font-size: 1.15rem; margin-bottom: 0.65rem; }
+        .recognition-card p { color: var(--text-secondary); }
+        .contact-section { text-align: center; }
+        .contact-section h2 { border-bottom: none; margin-bottom: 1rem; }
+        .contact-shell { max-width: 860px; margin: 0 auto; padding: 2.75rem 2rem; position: relative; overflow: hidden; }
+        .contact-shell::before { content: ''; position: absolute; width: 240px; height: 240px; border-radius: 50%; background: radial-gradient(circle, rgba(37, 107, 111, 0.12), transparent 70%); top: -120px; left: -80px; pointer-events: none; }
+        .contact-shell::after { content: ''; position: absolute; width: 260px; height: 260px; border-radius: 50%; background: radial-gradient(circle, rgba(184, 135, 70, 0.12), transparent 70%); bottom: -140px; right: -90px; pointer-events: none; }
+        .contact-section .section-intro { max-width: 680px; margin: 0 auto 2rem; position: relative; z-index: 1; }
+        .contact-links { justify-content: center; gap: 1rem; margin-bottom: 2rem; position: relative; z-index: 1; }
+        .contact-link { color: var(--accent-teal); min-width: 150px; justify-content: center; padding: 0.95rem 1.15rem; border: 1px solid rgba(37, 107, 111, 0.14); border-radius: 14px; background: rgba(255, 255, 255, 0.45); box-shadow: 0 10px 24px rgba(76, 57, 35, 0.06); }
+        .contact-link:hover { background: rgba(37, 107, 111, 0.08); border-color: rgba(37, 107, 111, 0.28); transform: translateY(-5px) scale(1.03); box-shadow: 0 14px 28px rgba(29, 106, 115, 0.12); }
+        .contact-link .icon { font-size: 1.2rem; }
+        footer { background: rgba(255, 252, 246, 0.55); border-top: 1px solid rgba(126, 96, 58, 0.12); }
+        #currently-building, .other-projects { display: none; }
+        nav a.is-active {
+            color: var(--accent-teal);
+            background: rgba(255,255,255,0.62);
+            box-shadow:
+                inset 0 -2px 0 var(--accent-gold),
+                0 8px 18px rgba(29, 62, 72, 0.08);
         }
+        @media (max-width: 1100px) { .projects-grid, .skills-grid, .hero-highlights { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+        @media (max-width: 768px) { .projects-grid, .skills-grid, .recognition-grid, .hero-content, .about-content, .hero-highlights { grid-template-columns: 1fr; } .contact-links { justify-content: center; } .project-meta-row { align-items: flex-start; } .hero { min-height: calc(100vh - 80px); padding: 2.5rem 0 3rem; } .hero-inner { min-height: auto; gap: 2rem; justify-content: flex-start; } .hero h1 { font-size: 36px; } .hero .title { font-size: 0.98rem; } .hero-text > p:not(.title):not(.open-to-work) { font-size: 1rem; } .hero-image { justify-content: center; } .hero-image img { width: min(58vw, 290px); height: min(58vw, 290px); outline-offset: 6px; } .contact-shell { padding: 2rem 1.2rem; } .contact-link { width: 100%; } }
+
     </style>
 </head>
 <body>
@@ -1129,75 +1085,48 @@
             </ul>
         </div>
     </nav>
-
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Latika Liladhar Dekate</h1>
-                    <p class="title">MS in Data Science, Analytics, and Engineering @ASU | Python • SQL • Machine Learning • Artificial Intelligence | Analytics & Visualization | AI Engineering | Big Data | Agentic Workflows</p>
-                    <p>M.S. in Data Science, Analytics & Engineering @ Arizona State University</p>
-                    <p class="open-to-work">🟢 Open to full-time Data Science & AI roles from January 2027</p>
-                    <div class="cta-buttons">
-                        <a href="resume.pdf" class="btn btn-primary" download>Download Resume</a>
-                        <a href="#contact" class="btn btn-secondary">Get in Touch</a>
-                        <a href="#projects" class="btn btn-secondary">View My Work</a>
+            <div class="hero-inner">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Latika Liladhar Dekate</h1>
+                        <p class="title">MS in Data Science, Analytics, and Engineering @ASU | Python &bull; SQL &bull; Machine Learning &bull; Artificial Intelligence | Analytics & Visualization | AI Engineering | Big Data | Agentic Workflows</p>
+                        <p>M.S. in Data Science, Analytics & Engineering @ Arizona State University</p>
+                        <p class="open-to-work">Open to full-time Data Science & AI roles from January 2027</p>
+                        <div class="cta-buttons">
+                            <a href="resume.pdf" class="btn btn-primary" download>Download Resume</a>
+                            <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                            <a href="#projects" class="btn btn-secondary">View My Work</a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <img src="./face.png" alt="Latika Liladhar Dekate profile photo">
                     </div>
                 </div>
-                <div class="hero-image">
-                    <img src="./face.png" alt="Latika Liladhar Dekate profile photo">
+                <div class="hero-highlights">
+                    <div class="highlight-card">
+                        <div class="label"><span>&#127891;</span><span>Education</span></div>
+                        <h3>Arizona State University</h3>
+                        <p>M.S. in Data Science, Analytics & Engineering (EE) &bull; GPA: 3.89/4.00 &bull; Dec 2026</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="label"><span>&#128640;</span><span>Recognition</span></div>
+                        <h3>NASA Space Apps Challenge</h3>
+                        <p>Regional Winner & Global Nominee, NASA Space Apps Challenge 2025</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="label"><span>&#128202;</span><span>Expertise</span></div>
+                        <h3>Production-Focused AI Systems</h3>
+                        <p>GraphRAG, retrieval security, computer vision, and deployed analytics with measurable outcomes.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="label"><span>&#128220;</span><span>Patent</span></div>
+                        <h3>Multilayer Microstrip Aerial Transmitter Receptor</h3>
+                        <p>Wi-Fi applications &bull; Apr 2024 &bull; Bachelor's final year project</p>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Quick Highlights -->
-    <section>
-        <div class="container">
-            <div class="highlights">
-                <div class="highlight-card">
-                    <div class="label">🎓 Education</div>
-                    <h3>Arizona State University</h3>
-                    <p>M.S. in Data Science, Analytics & Engineering (EE) • GPA: 3.89/4.00 • Dec 2026</p>
-                </div>
-                <div class="highlight-card">
-                    <div class="label">🚀 Recognition</div>
-                    <h3>NASA Space Apps Challenge</h3>
-                    <p>Regional Winner & Global Nominee, NASA Space Apps Challenge 2025</p>
-                </div>
-                <div class="highlight-card">
-                    <div class="label">📊 Expertise</div>
-                    <h3>Production-Focused AI Systems</h3>
-                    <p>GraphRAG, retrieval security, computer vision, and deployed analytics with measurable outcomes</p>
-                </div>
-                <div class="highlight-card">
-                    <div class="label">📜 Patent</div>
-                    <h3>Multilayer Microstrip Aerial Transmitter Receptor</h3>
-                    <p>Wi-Fi Applications • Apr 2024 • Bachelor’s Final Year Project</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-    <!-- Patents & Publications Section -->
-    <section id="patents">
-        <div class="container">
-            <h2>Patents &amp; Publications</h2>
-            <div class="section-intro">
-                Research and IP that demonstrate differentiated depth beyond coursework.
-            </div>
-            <div class="education-item">
-                <h3>Multilayer Microstrip Aerial Transmitter Receptor for Wi-Fi Applications</h3>
-                <div class="institution">Patent filed/granted in 2024</div>
-                <div class="details">
-                    <span>Patent</span>
-                    <span>Year: 2024</span>
-                    <span>Wireless Communication Systems</span>
-                </div>
-                <p>Designed a multilayer microstrip transmitter-receptor architecture for Wi-Fi communication systems to improve signal handling in compact hardware environments. The work stands out as an early research output that bridges systems engineering and applied innovation.</p>
             </div>
         </div>
     </section>
@@ -1240,42 +1169,66 @@
     <!-- Skills Section -->
     <section id="skills">
         <div class="container">
-            <h2>Technical Expertise</h2>
+            <h2>Technical Skills</h2>
             <div class="section-intro">
-                Depth-first skills grouped by where I deliver the most value today.
+                A structured view of the tools and platforms I use across machine learning, data systems, retrieval, and deployment.
             </div>
             <div class="skills-grid">
                 <div class="skill-category">
-                    <h3>Expert</h3>
+                    <h3>Programming Languages</h3>
                     <span class="skill-tag">Python</span>
                     <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">C/C++</span>
+                    <span class="skill-tag">Bash</span>
+                </div>
+                <div class="skill-category">
+                    <h3>Machine Learning &amp; Deep Learning</h3>
                     <span class="skill-tag">Scikit-learn</span>
                     <span class="skill-tag">PyTorch</span>
+                    <span class="skill-tag">TensorFlow</span>
+                    <span class="skill-tag">Deep Learning</span>
+                    <span class="skill-tag">Neural Networks</span>
+                    <span class="skill-tag">Computer Vision</span>
+                </div>
+                <div class="skill-category">
+                    <h3>Generative AI &amp; NLP</h3>
                     <span class="skill-tag">LangChain</span>
                     <span class="skill-tag">GraphRAG</span>
-                    <span class="skill-tag">Streamlit</span>
-                </div>
-                <div class="skill-category">
-                    <h3>Proficient</h3>
                     <span class="skill-tag">Neo4j</span>
                     <span class="skill-tag">ChromaDB</span>
-                    <span class="skill-tag">OpenCV</span>
-                    <span class="skill-tag">YOLO</span>
-                    <span class="skill-tag">Docker</span>
-                    <span class="skill-tag">PostgreSQL</span>
-                    <span class="skill-tag">Plotly</span>
+                    <span class="skill-tag">Hugging Face</span>
+                    <span class="skill-tag">SpaCy</span>
+                    <span class="skill-tag">LLM Workflows</span>
                 </div>
                 <div class="skill-category">
-                    <h3>Familiar</h3>
-                    <span class="skill-tag">TensorFlow</span>
-                    <span class="skill-tag">Kubernetes</span>
-                    <span class="skill-tag">Kafka</span>
+                    <h3>Data Engineering</h3>
+                    <span class="skill-tag">ETL Pipelines</span>
                     <span class="skill-tag">PySpark</span>
+                    <span class="skill-tag">Kafka</span>
+                    <span class="skill-tag">Data Cleaning</span>
+                    <span class="skill-tag">Data Processing</span>
+                    <span class="skill-tag">Feature Engineering</span>
+                </div>
+                <div class="skill-category">
+                    <h3>Deployment, Databases &amp; Cloud</h3>
+                    <span class="skill-tag">PostgreSQL</span>
+                    <span class="skill-tag">REST APIs</span>
                     <span class="skill-tag">Flask</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Kubernetes</span>
+                    <span class="skill-tag">GCP</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">Linux</span>
+                </div>
+                <div class="skill-category">
+                    <h3>Visualization &amp; Analytics</h3>
+                    <span class="skill-tag">Streamlit</span>
+                    <span class="skill-tag">Plotly</span>
+                    <span class="skill-tag">Tableau</span>
                     <span class="skill-tag">Power BI</span>
-                    <span class="skill-tag">Bash</span>
-                    <span class="skill-tag">C/C++</span>
-                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">D3.js</span>
+                    <span class="skill-tag">Excel</span>
                 </div>
             </div>
         </div>
@@ -1284,182 +1237,283 @@
     <!-- Projects Section -->
     <section id="projects">
         <div class="container">
-            <h2>Featured Projects</h2>
+            <h2>Projects</h2>
             <div class="section-intro">
-                Projects selected for deployment quality, measurable impact, and relevance to 2026 AI/ML hiring.
+                Selected work ordered from most recent to earlier projects, with emphasis on measurable outcomes, live deployments, and differentiated AI systems experience.
+            </div>
+            <div class="project-filters">
+                <button class="filter-chip is-active" type="button" data-filter="all">All</button>
+                <button class="filter-chip" type="button" data-filter="rag">RAG / GraphRAG</button>
+                <button class="filter-chip" type="button" data-filter="cv">Computer Vision</button>
+                <button class="filter-chip" type="button" data-filter="nlp">NLP</button>
+                <button class="filter-chip" type="button" data-filter="analytics">Analytics</button>
+                <button class="filter-chip" type="button" data-filter="deployment">Live / Deployed</button>
             </div>
             <div class="projects-grid">
-                <div class="project-card">
+                <div class="project-card featured-project reveal" data-tags="cv ai deployment">
                     <div class="project-header">
-                        <h3><a href="https://github.com/latikadekate123/KRR-Final-Project" class="project-link" target="_blank">Stealthy Poisoning in RAG Systems</a></h3>
-                        <span class="project-date">Mar 2026 - Apr 2026</span>
-                        <span class="project-tag">Python &middot; LangChain &middot; ChromaDB &middot; Llama 3.1</span>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-description"><strong>Secures retrieval-augmented generation systems against semantic-preserving poisoning that slips past standard anomaly detectors.</strong></div>
-                        <div class="project-description">Built a security evaluation framework for a 5,000-document RAG pipeline, testing knowledge-base poisoning strategies, retrieval behavior, and mitigation performance across multiple detector settings.</div>
-                        <div class="project-description"><strong>RESULT - Investigated 5 knowledge-base variants and 25 detector configurations; embedding-space detectors reached only ~0.527 mean AUC, while a top-K capped mitigation preserved KB integrity across all 5 poisoning variants without degrading token-F1 baseline.</strong></div>
-                        <div class="project-links">
-                            <a href="https://github.com/latikadekate123/KRR-Final-Project" class="project-link">GitHub</a>
-                            <a href="https://vpate160.github.io/KRR-Final-Project/results/module4_visualization_report.html" class="project-link" target="_blank">Live Demo</a>
+                        <div class="project-meta-row">
+                            <span class="project-date">Mar 2026 - May 2026</span>
+                            <span class="project-chip">Computer Vision</span>
                         </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3><a href="https://github.com/latikadekate123/Smartgrid-Power-System-Load-Forecasting" class="project-link" target="_blank">SmartGrid Power System</a></h3>
-                        <span class="project-date">Jul 2025 - Aug 2025</span>
-                        <span class="project-tag">Python &middot; ETL &middot; Streamlit &middot; Time-Series Analytics</span>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-description"><strong>Surfaces abnormal household energy consumption early enough for operators and analysts to investigate before costs compound.</strong></div>
-                        <div class="project-description">Built an ETL pipeline and live Streamlit dashboard over smart-grid usage data, combining preprocessing, anomaly scoring, and interactive visual drill-downs for load-pattern inspection.</div>
-                        <div class="project-description"><strong>RESULT - Delivered a live anomaly-monitoring app that flags unusual load behavior in real time and turns raw energy telemetry into operator-ready visual diagnostics.</strong></div>
-                        <div class="project-links">
-                            <a href="https://github.com/latikadekate123/Smartgrid-Power-System-Load-Forecasting" class="project-link">GitHub</a>
-                            <a href="https://smartgrid-power-system.streamlit.app/" class="project-link" target="_blank">Live Demo</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
                         <h3><a href="https://github.com/latikadekate123" class="project-link" target="_blank">Smart-Sighted SLAM</a></h3>
-                        <span class="project-date">Mar 2026 - May 2026</span>
-                        <span class="project-tag">Python &middot; ORB-SLAM3 &middot; OpenCV &middot; YOLO &middot; RAFT</span>
+                        <div class="project-tag-list">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">ORB-SLAM3</span>
+                            <span class="project-tag">OpenCV</span>
+                            <span class="project-tag">YOLO</span>
+                            <span class="project-tag">RAFT</span>
+                        </div>
                     </div>
                     <div class="project-body">
-                        <div class="project-description"><strong>Improves monocular SLAM reliability in dynamic scenes where moving objects corrupt localization and mapping.</strong></div>
-                        <div class="project-description">Built a dynamic-object-aware SLAM pipeline with YOLO-based masking, optical-flow variants, and camera-only input to suppress motion noise before pose estimation and mapping.</div>
-                        <div class="project-description"><strong>RESULT - Reduced trajectory error by 80%+ versus baseline, achieved a best Sim(3) RMSE of 2.60 cm, and increased map-point coverage by 36.7% with RAFT masking.</strong></div>
+                        <p class="project-problem">Improves monocular SLAM reliability in dynamic scenes where moving objects corrupt localization and mapping.</p>
+                        <p class="project-summary">Built a dynamic-object-aware SLAM pipeline with object masking, optical-flow variants, and camera-only input to suppress motion noise before pose estimation and map generation.</p>
+                        <p class="project-result"><strong>80%+ trajectory error reduction</strong>, best Sim(3) RMSE of <strong>2.60 cm</strong>, and <strong>36.7% more map points</strong> with RAFT masking.</p>
                         <div class="project-links">
-                            <a href="https://github.com/latikadekate123" class="project-link" target="_blank">GitHub</a>
+                            <a href="https://github.com/latikadekate123" class="project-link button-link" target="_blank">GitHub</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card featured-project reveal" data-tags="rag security nlp deployment">
                     <div class="project-header">
+                        <div class="project-meta-row">
+                            <span class="project-date">Mar 2026 - Apr 2026</span>
+                            <span class="project-chip">AI Security</span>
+                        </div>
+                        <h3><a href="https://github.com/latikadekate123/KRR-Final-Project" class="project-link" target="_blank">Stealthy Poisoning in RAG Systems</a></h3>
+                        <div class="project-tag-list">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">LangChain</span>
+                            <span class="project-tag">ChromaDB</span>
+                            <span class="project-tag">Llama 3.1</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-problem">Secures retrieval-augmented generation systems against semantic-preserving poisoning that bypasses standard anomaly detection.</p>
+                        <p class="project-summary">Built a security evaluation framework across five knowledge-base variants and multiple detector settings to measure attack stealth, retrieval behavior, and mitigation quality.</p>
+                        <p class="project-result"><strong>25 detector configurations tested</strong>; embedding-space detectors averaged only <strong>0.527 AUC</strong>, while top-K capping preserved KB integrity across all five poisoning variants.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/latikadekate123/KRR-Final-Project" class="project-link button-link" target="_blank">GitHub</a>
+                            <a href="https://vpate160.github.io/KRR-Final-Project/results/module4_visualization_report.html" class="project-link button-link secondary-link" target="_blank">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card featured-project reveal" data-tags="rag analytics deployment">
+                    <div class="project-header">
+                        <div class="project-meta-row">
+                            <span class="project-date">Oct 2025</span>
+                            <span class="project-chip">NASA Winner</span>
+                        </div>
                         <h3><a href="https://github.com/International-NASA-Space-App-Hackathon/AstraNode" class="project-link" target="_blank">AstraNode</a></h3>
-                        <span class="project-date">Oct 2025</span>
-                        <span class="project-tag">Neo4j &middot; GraphRAG &middot; LangChain &middot; Python</span>
+                        <div class="project-tag-list">
+                            <span class="project-tag">Neo4j</span>
+                            <span class="project-tag">GraphRAG</span>
+                            <span class="project-tag">LangChain</span>
+                            <span class="project-tag">Python</span>
+                        </div>
                     </div>
                     <div class="project-body">
-                        <div class="project-description"><strong>Helps researchers navigate large NASA literature collections without manually combing through hundreds of papers.</strong></div>
-                        <div class="project-description">Built a GraphRAG research assistant on top of Neo4j and LangChain that connected entities, papers, and themes across 600+ NASA documents for faster knowledge synthesis.</div>
-                        <div class="project-description"><strong>RESULT - Regional Winner & Global Nominee, NASA Space Apps Challenge 2025; reduced research discovery time by 40% with a graph-native retrieval workflow that made technical exploration faster and more explainable.</strong></div>
+                        <p class="project-problem">Helps researchers navigate large NASA literature collections without manually reviewing hundreds of papers.</p>
+                        <p class="project-summary">Built a GraphRAG research assistant on Neo4j and LangChain that connected entities, papers, and themes across 600+ NASA documents for faster exploration.</p>
+                        <p class="project-result"><strong>Regional Winner &amp; Global Nominee</strong>, NASA Space Apps Challenge 2025; reduced research discovery time by <strong>40%</strong>.</p>
                         <div class="project-links">
-                            <a href="https://github.com/International-NASA-Space-App-Hackathon/AstraNode" class="project-link">GitHub</a>
+                            <a href="https://github.com/International-NASA-Space-App-Hackathon/AstraNode" class="project-link button-link" target="_blank">GitHub</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card featured-project reveal" data-tags="rag analytics">
                     <div class="project-header">
+                        <div class="project-meta-row">
+                            <span class="project-date">Sep 2025</span>
+                            <span class="project-chip">Knowledge Retrieval</span>
+                        </div>
                         <h3><a href="https://github.com/International-NASA-Space-App-Hackathon/AstraNode" class="project-link" target="_blank">GraphRAG + Neo4j Research Intelligence</a></h3>
-                        <span class="project-date">2025</span>
-                        <span class="project-tag">Knowledge Graphs &middot; Neo4j &middot; GraphRAG &middot; Retrieval Evaluation</span>
+                        <div class="project-tag-list">
+                            <span class="project-tag">Knowledge Graphs</span>
+                            <span class="project-tag">Neo4j</span>
+                            <span class="project-tag">GraphRAG</span>
+                            <span class="project-tag">Retrieval Evaluation</span>
+                        </div>
                     </div>
                     <div class="project-body">
-                        <div class="project-description"><strong>Makes technical knowledge bases searchable by relationships, not just keyword overlap, for better long-context reasoning.</strong></div>
-                        <div class="project-description">Designed graph-native retrieval patterns, schema connections, and evidence-grounded synthesis flows that mapped concepts, documents, and citations into a more navigable research surface.</div>
-                        <div class="project-description"><strong>RESULT - Demonstrated differentiated GraphRAG and Neo4j experience in a live research setting, turning 600+ papers into a connected retrieval layer instead of a flat document store.</strong></div>
+                        <p class="project-problem">Makes technical knowledge bases searchable by relationships instead of keyword overlap alone.</p>
+                        <p class="project-summary">Designed graph-native retrieval flows, schema connections, and evidence-grounded synthesis patterns that map concepts, documents, and citations into a connected research layer.</p>
+                        <p class="project-result"><strong>600+ papers transformed</strong> into a graph-driven retrieval surface with stronger explainability than a flat document store.</p>
                         <div class="project-links">
-                            <a href="https://github.com/International-NASA-Space-App-Hackathon/AstraNode" class="project-link">GitHub</a>
+                            <a href="https://github.com/International-NASA-Space-App-Hackathon/AstraNode" class="project-link button-link" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal" data-tags="nlp ai">
+                    <div class="project-header">
+                        <div class="project-meta-row">
+                            <span class="project-date">Sep 2025</span>
+                            <span class="project-chip">NLP</span>
+                        </div>
+                        <h3><a href="https://github.com/latikadekate123/Advanced-Text-Analyzer" class="project-link" target="_blank">Advanced Text Analyzer</a></h3>
+                        <div class="project-tag-list">
+                            <span class="project-tag">FinBERT</span>
+                            <span class="project-tag">SpaCy</span>
+                            <span class="project-tag">Flask</span>
+                            <span class="project-tag">React</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-problem">Accelerates sentiment and entity analysis across financial, product, and general text domains.</p>
+                        <p class="project-summary">Built a multi-domain NLP app combining FinBERT sentiment classification, SpaCy entity extraction, and an interactive analyst-facing interface.</p>
+                        <p class="project-result"><strong>95%+ accuracy</strong> across supported sentiment tasks.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/latikadekate123/Advanced-Text-Analyzer" class="project-link button-link" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal" data-tags="ai analytics">
+                    <div class="project-header">
+                        <div class="project-meta-row">
+                            <span class="project-date">Sep 2025</span>
+                            <span class="project-chip">Recommender Systems</span>
+                        </div>
+                        <h3><a href="https://github.com/latikadekate123/Flawless-Fashion" class="project-link" target="_blank">Multimodal Fashion Recommender</a></h3>
+                        <div class="project-tag-list">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Streamlit</span>
+                            <span class="project-tag">CNN</span>
+                            <span class="project-tag">Hybrid Filtering</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-problem">Improves recommendation quality when sparse user history makes cold-start personalization difficult.</p>
+                        <p class="project-summary">Built a hybrid recommender that fused product metadata with image embeddings from a pretrained CNN to rank visually and semantically similar items.</p>
+                        <p class="project-result"><strong>Improved cold-start recommendation quality</strong> through multimodal similarity ranking.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/latikadekate123/Flawless-Fashion" class="project-link button-link" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card featured-project reveal" data-tags="analytics deployment">
+                    <div class="project-header">
+                        <div class="project-meta-row">
+                            <span class="project-date">Jul 2025 - Aug 2025</span>
+                            <span class="project-chip">Live App</span>
+                        </div>
+                        <h3><a href="https://github.com/latikadekate123/Smartgrid-Power-System-Load-Forecasting" class="project-link" target="_blank">SmartGrid Power System</a></h3>
+                        <div class="project-tag-list">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">ETL</span>
+                            <span class="project-tag">Streamlit</span>
+                            <span class="project-tag">Time-Series</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-problem">Surfaces abnormal household energy consumption early enough for analysts to investigate before costs compound.</p>
+                        <p class="project-summary">Built an ETL pipeline and live Streamlit dashboard over smart-grid usage data with anomaly scoring and interactive visual drill-downs.</p>
+                        <p class="project-result"><strong>Live anomaly-monitoring app</strong> that turns raw energy telemetry into operator-ready visual diagnostics.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/latikadekate123/Smartgrid-Power-System-Load-Forecasting" class="project-link button-link" target="_blank">GitHub</a>
+                            <a href="https://smartgrid-power-system.streamlit.app/" class="project-link button-link secondary-link" target="_blank">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal" data-tags="deployment">
+                    <div class="project-header">
+                        <div class="project-meta-row">
+                            <span class="project-date">Jul 2025</span>
+                            <span class="project-chip">Systems</span>
+                        </div>
+                        <h3><a href="https://github.com/latikadekate123/System-Health-Monitor-on-Ubuntu" class="project-link" target="_blank">System Health Monitor</a></h3>
+                        <div class="project-tag-list">
+                            <span class="project-tag">Bash</span>
+                            <span class="project-tag">Monitoring</span>
+                            <span class="project-tag">Alerts</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-problem">Provides lightweight health checks for Ubuntu systems without full observability tooling.</p>
+                        <p class="project-summary">Built a Bash utility for CPU, memory, disk, and uptime tracking with logging and alert notifications for low-overhead environments.</p>
+                        <p class="project-result"><strong>Real-time host monitoring</strong> with minimal runtime overhead.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/latikadekate123/System-Health-Monitor-on-Ubuntu" class="project-link button-link" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal" data-tags="analytics deployment">
+                    <div class="project-header">
+                        <div class="project-meta-row">
+                            <span class="project-date">Jun 2025 - Jul 2025</span>
+                            <span class="project-chip">Analytics</span>
+                        </div>
+                        <h3><a href="https://github.com/latikadekate123/City-Pulse-Smart-Transit-System-using-SQL" class="project-link" target="_blank">CityPulse Smart Transit</a></h3>
+                        <div class="project-tag-list">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">PostgreSQL 17</span>
+                            <span class="project-tag">Streamlit</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-problem">Improves visibility into route reliability and congestion patterns in public transit operations.</p>
+                        <p class="project-summary">Built a SQL-first analytics system on real NYC MTA data with simulated trip generation, anomaly queries, and dashboard views for route monitoring.</p>
+                        <p class="project-result"><strong>90 days of modeled trips</strong> used to surface weather-linked congestion trends and peak-hour constraints.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/latikadekate123/City-Pulse-Smart-Transit-System-using-SQL" class="project-link button-link" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal" data-tags="cv ai">
+                    <div class="project-header">
+                        <div class="project-meta-row">
+                            <span class="project-date">2025</span>
+                            <span class="project-chip">Healthcare AI</span>
+                        </div>
+                        <h3><a href="https://github.com/latikadekate123/Breast-Cancer-Clasification" class="project-link" target="_blank">Breast Cancer Classification: ViT, GNN &amp; Hybrid Models</a></h3>
+                        <div class="project-tag-list">
+                            <span class="project-tag">PyTorch</span>
+                            <span class="project-tag">Vision Transformer</span>
+                            <span class="project-tag">GNN</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-problem">Supports earlier and more accurate cancer-screening decisions from histopathology imagery.</p>
+                        <p class="project-summary">Benchmarked Vision Transformer, Graph Neural Network, and hybrid ViT-GNN architectures on histopathology image data to compare feature learning strategies.</p>
+                        <p class="project-result"><strong>Hybrid architecture outperformed</strong> single-model baselines on evaluation.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/latikadekate123/Breast-Cancer-Clasification" class="project-link button-link" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal" data-tags="analytics ai">
+                    <div class="project-header">
+                        <div class="project-meta-row">
+                            <span class="project-date">Mar 2025 - May 2025</span>
+                            <span class="project-chip">Predictive Modeling</span>
+                        </div>
+                        <h3><a href="https://github.com/latikadekate123" class="project-link" target="_blank">White Wine Quality Prediction</a></h3>
+                        <div class="project-tag-list">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Scikit-learn</span>
+                            <span class="project-tag">Random Forest</span>
+                            <span class="project-tag">Tableau</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-problem">Identifies which physicochemical properties most influence white-wine quality variation across production batches.</p>
+                        <p class="project-summary">Analyzed 4,898 wine samples, built regression baselines, and compared tree-based and linear models using MAE, RMSE, and R-squared.</p>
+                        <p class="project-result"><strong>7 regression models benchmarked</strong>; alcohol content and density emerged as the strongest predictors.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/latikadekate123" class="project-link button-link" target="_blank">GitHub</a>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <details class="other-projects">
-                <summary>Other Projects</summary>
-                <div class="other-projects-grid" style="padding: 24px;">
-                    <div class="project-card">
-                        <div class="project-header">
-                            <h3><a href="https://github.com/latikadekate123/Advanced-Text-Analyzer" class="project-link" target="_blank">Advanced Text Analyzer</a></h3>
-                            <span class="project-date">Aug 2025 - Sep 2025</span>
-                            <span class="project-tag">FinBERT &middot; SpaCy &middot; Flask &middot; React</span>
-                        </div>
-                        <div class="project-body">
-                            <div class="project-description"><strong>Accelerates sentiment and entity analysis across financial, product, and general text domains.</strong></div>
-                            <div class="project-description">Built a multi-domain NLP application combining FinBERT sentiment classification, SpaCy named-entity extraction, and an interactive interface for side-by-side text analysis.</div>
-                            <div class="project-description"><strong>RESULT - Reached 95%+ accuracy across supported sentiment tasks while packaging the workflow into an analyst-friendly interface.</strong></div>
-                            <div class="project-links"><a href="https://github.com/latikadekate123/Advanced-Text-Analyzer" class="project-link">GitHub</a></div>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-header">
-                            <h3><a href="https://github.com/latikadekate123/City-Pulse-Smart-Transit-System-using-SQL" class="project-link" target="_blank">CityPulse Smart Transit</a></h3>
-                            <span class="project-date">Jun 2025 - Jul 2025</span>
-                            <span class="project-tag">Python &middot; PostgreSQL 17 &middot; Streamlit</span>
-                        </div>
-                        <div class="project-body">
-                            <div class="project-description"><strong>Improves visibility into route reliability and congestion patterns in public transit operations.</strong></div>
-                            <div class="project-description">Built a SQL-first analytics system on real NYC MTA data with simulated trip generation, anomaly queries, and dashboard views for route-performance monitoring.</div>
-                            <div class="project-description"><strong>RESULT - Modeled 90 days of trips to surface weather-linked congestion trends and peak-hour service constraints for operations analysis.</strong></div>
-                            <div class="project-links"><a href="https://github.com/latikadekate123/City-Pulse-Smart-Transit-System-using-SQL" class="project-link">GitHub</a></div>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-header">
-                            <h3><a href="https://github.com/latikadekate123/Flawless-Fashion" class="project-link" target="_blank">Multimodal Fashion Recommender</a></h3>
-                            <span class="project-date">Sep 2025</span>
-                            <span class="project-tag">Python &middot; Streamlit &middot; CNN &middot; Hybrid Filtering</span>
-                        </div>
-                        <div class="project-body">
-                            <div class="project-description"><strong>Improves recommendation quality when sparse user history makes cold-start personalization difficult.</strong></div>
-                            <div class="project-description">Built a hybrid recommender that fused product metadata with image embeddings from a pretrained CNN to rank visually and semantically similar items more effectively.</div>
-                            <div class="project-description"><strong>RESULT - Improved cold-start recommendation quality by combining multimodal similarity signals with feedback-aware ranking.</strong></div>
-                            <div class="project-links"><a href="https://github.com/latikadekate123/Flawless-Fashion" class="project-link">GitHub</a></div>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-header">
-                            <h3><a href="https://github.com/latikadekate123/Breast-Cancer-Clasification" class="project-link" target="_blank">Breast Cancer Classification: ViT, GNN &amp; Hybrid Models</a></h3>
-                            <span class="project-date">2025</span>
-                            <span class="project-tag">PyTorch &middot; Vision Transformer &middot; GNN</span>
-                        </div>
-                        <div class="project-body">
-                            <div class="project-description"><strong>Supports earlier and more accurate cancer-screening decisions from histopathology imagery.</strong></div>
-                            <div class="project-description">Benchmarked Vision Transformer, Graph Neural Network, and hybrid ViT-GNN architectures on histopathology image data to compare feature learning strategies for tissue classification.</div>
-                            <div class="project-description"><strong>RESULT - Showed the hybrid architecture improved diagnostic classification performance over single-model baselines on the evaluation set.</strong></div>
-                            <div class="project-links"><a href="https://github.com/latikadekate123/Breast-Cancer-Clasification" class="project-link">GitHub</a></div>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-header">
-                            <h3><a href="https://github.com/latikadekate123" class="project-link" target="_blank">White Wine Quality Prediction</a></h3>
-                            <span class="project-date">Mar 2025 - May 2025</span>
-                            <span class="project-tag">Python &middot; Scikit-learn &middot; Random Forest &middot; Tableau</span>
-                        </div>
-                        <div class="project-body">
-                            <div class="project-description"><strong>Identifies which physicochemical properties most influence wine-quality variation across production batches.</strong></div>
-                            <div class="project-description">Analyzed 4,898 white wine samples, built regression baselines, and compared tree-based and linear models using MAE, RMSE, and R� to understand predictive signal strength.</div>
-                            <div class="project-description"><strong>RESULT - Benchmarked 7 regression models and identified alcohol content and density as the strongest predictors of quality.</strong></div>
-                            <div class="project-links"><a href="https://github.com/latikadekate123" class="project-link" target="_blank">GitHub</a></div>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-header">
-                            <h3><a href="https://github.com/latikadekate123/System-Health-Monitor-on-Ubuntu" class="project-link" target="_blank">System Health Monitor</a></h3>
-                            <span class="project-date">Jul 2025</span>
-                            <span class="project-tag">Bash &middot; Monitoring &middot; Alerts</span>
-                        </div>
-                        <div class="project-body">
-                            <div class="project-description"><strong>Provides lightweight health checks for local Ubuntu systems without full observability tooling.</strong></div>
-                            <div class="project-description">Built a Bash-based monitoring utility for CPU, memory, disk, and uptime tracking with logging and alert notifications for small-footprint environments.</div>
-                            <div class="project-description"><strong>RESULT - Delivered real-time host monitoring with minimal runtime overhead and simple desktop alerting.</strong></div>
-                            <div class="project-links"><a href="https://github.com/latikadekate123/System-Health-Monitor-on-Ubuntu" class="project-link">GitHub</a></div>
-                        </div>
-                    </div>
-                </div>
-            </details>
         </div>
     </section>
 
@@ -1472,9 +1526,9 @@
             </div>
 
             <div class="experience-item">
-                <h3>Research Assistant, DaRL Lab LibSignal Research</h3>
+                <h3>Research Intern, DaRL Lab LibSignal Research</h3>
                 <div class="company">Arizona State University, School of Computing and Augmented Intelligence</div>
-                <div class="period">2026 - Present</div>
+                <div class="period">May 2026 - Present</div>
                 <ul>
                     <li>Contribute to LibSignal research under Dr. Hua Wei, with emphasis on signal-aware language systems, reproducible experimentation, and evaluation rigor.</li>
                     <li>Build research tooling and experiment workflows that make it easier to benchmark model behavior, compare runs, and surface actionable findings.</li>
@@ -1493,7 +1547,18 @@
             </div>
 
             <div class="experience-item">
-                <h3>ML Curriculum Design &amp; Student Mentor</h3>
+                <h3>SEO &amp; Digital Analytics Intern</h3>
+                <div class="company">SIES Graduate School of Technology, India</div>
+                <div class="period">2021 - 2023</div>
+                <ul>
+                    <li>Analyzed search-performance trends, keyword behavior, and page-level engagement data to identify content and discoverability opportunities.</li>
+                    <li>Supported on-page optimization, metadata refinement, and structured content updates using a measurement-driven workflow grounded in traffic and ranking signals.</li>
+                    <li>Built early experience in experimentation, performance tracking, and translating noisy web data into practical decisions, which later shaped my approach to ML evaluation and analytics.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>ML &amp; DS Coordinator</h3>
                 <div class="company">Google Developer Student Clubs (GDSC) @ SIES Graduate School of Technology, India</div>
                 <div class="period">Jun 2022 - Apr 2024</div>
                 <ul>
@@ -1521,9 +1586,6 @@
                     <span>🎓 Expected: December 2026</span>
                 </div>
                 <p>Advanced study in data science, analytics, machine learning, big data systems, and cloud engineering. Coursework includes applied machine learning, big data technologies, advanced databases, and agentic AI systems.</p>
-                <div class="badges">
-                    <div class="honor-badge">🚀 NASA Space Apps Challenge Regional Winner & Global Nominee</div>
-                </div>
             </div>
 
             <div class="education-item">
@@ -1536,8 +1598,29 @@
                     <span>🎓 Completed: 2024</span>
                 </div>
                 <p>Strong foundation in electronics, signal processing, and systems engineering. This background informs my approach to building scalable, efficient data systems and machine learning architectures.</p>
-                <div class="badges">
-                    <div class="honor-badge">📜 Patent - Multilayer Microstrip Aerial Transmitter Receptor for Wi-Fi Applications &middot; Apr 2024</div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Recognition Section -->
+    <section id="recognition">
+        <div class="container">
+            <h2>Recognition</h2>
+            <div class="section-intro">
+                Highlights that quickly signal research credibility, innovation, and differentiated achievement.
+            </div>
+            <div class="recognition-grid">
+                <div class="recognition-card">
+                    <div class="recognition-label">NASA Space Apps Challenge</div>
+                    <h3>Regional Winner &amp; Global Nominee</h3>
+                    <p><strong>2025</strong> - AstraNode built a GraphRAG system over 600+ NASA research papers to accelerate scientific discovery and explainable retrieval, which helped the project stand out in competition.</p>
+                </div>
+                <div class="recognition-card">
+                    <div class="recognition-label">Patent</div>
+                    <h3>Multilayer Microstrip Aerial Transmitter Receptor for Wi-Fi Applications</h3>
+                    <p><strong>2024</strong> - Designed a multilayer microstrip transmitter-receptor architecture for Wi-Fi systems to improve signal handling in compact hardware environments.</p>
                 </div>
             </div>
         </div>
@@ -1560,27 +1643,29 @@
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <div class="container">
-            <h2>Let's Connect</h2>
-            <p class="section-intro" style="margin-bottom: 2rem;">
-                Interested in collaborating? I'm open to full-time opportunities in Data Science, AI Engineering, and AI research.
-            </p>
-            <div class="contact-links">
-                <a href="https://www.linkedin.com/in/latika-dekate-12181a221" class="contact-link" target="_blank">
-                    <span class="icon">💼</span>
-                    <span>LinkedIn</span>
-                </a>
-                <a href="https://github.com/latikadekate123" class="contact-link" target="_blank">
-                    <span class="icon">🐙</span>
-                    <span>GitHub</span>
-                </a>
-                <a href="mailto:ldekate@asu.edu" class="contact-link">
-                    <span class="icon">✉️</span>
-                    <span>Email</span>
-                </a>
+            <div class="contact-shell">
+                <h2>Let's Connect</h2>
+                <p class="section-intro" style="margin-bottom: 2rem;">
+                    Open to thoughtful conversations about Data Science, AI Engineering, ML research, and full-time opportunities starting January 2027.
+                </p>
+                <div class="contact-links">
+                    <a href="https://www.linkedin.com/in/latika-dekate-12181a221" class="contact-link" target="_blank">
+                        <span class="icon">💼</span>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/latikadekate123" class="contact-link" target="_blank">
+                        <span class="icon">🐙</span>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="mailto:ldekate@asu.edu" class="contact-link">
+                        <span class="icon">✉️</span>
+                        <span>Email</span>
+                    </a>
+                </div>
+                <p style="color: var(--text-muted); margin-top: 0; position: relative; z-index: 1;">
+                    Best fit: Data Science, Machine Learning Engineering, AI research, and retrieval-focused applied AI roles.
+                </p>
             </div>
-            <p style="color: var(--text-muted); margin-top: 2rem;">
-                Feel free to reach out for opportunities in Data Science, Machine Learning Engineering, or AI Research roles.
-            </p>
         </div>
     </section>
 
@@ -1590,5 +1675,62 @@
             <p>&copy; 2026 Latika Liladhar Dekate. Open to full-time Data Science &amp; AI roles from January 2027.</p>
         </div>
     </footer>
+    <script>
+        const filterChips = document.querySelectorAll('.filter-chip');
+        const projectCards = document.querySelectorAll('.project-card[data-tags]');
+        const navLinks = document.querySelectorAll('nav a[href^="#"]');
+        const sections = document.querySelectorAll('section[id]');
+        const revealNodes = document.querySelectorAll('.reveal, .highlight-card, .skill-category, .recognition-card, .experience-item, .education-item, .contact-shell');
+
+        filterChips.forEach((chip) => {
+            chip.addEventListener('click', () => {
+                const filter = chip.dataset.filter;
+                filterChips.forEach((item) => item.classList.remove('is-active'));
+                chip.classList.add('is-active');
+
+                projectCards.forEach((card) => {
+                    const tags = (card.dataset.tags || '').split(' ');
+                    const shouldShow = filter === 'all' || tags.includes(filter);
+                    card.classList.toggle('is-hidden', !shouldShow);
+                });
+            });
+        });
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, { threshold: 0.12 });
+
+        revealNodes.forEach((node) => {
+            if (!node.classList.contains('reveal')) node.classList.add('reveal');
+            revealObserver.observe(node);
+        });
+
+        const setActiveNav = (id) => {
+            navLinks.forEach((link) => {
+                link.classList.toggle('is-active', link.getAttribute('href') === `#${id}`);
+            });
+        };
+
+        navLinks.forEach((link) => {
+            link.addEventListener('click', () => {
+                const id = link.getAttribute('href').replace('#', '');
+                setActiveNav(id);
+            });
+        });
+
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                const id = entry.target.getAttribute('id');
+                setActiveNav(id);
+            });
+        }, { rootMargin: '-20% 0px -65% 0px', threshold: 0.15 });
+
+        sections.forEach((section) => sectionObserver.observe(section));
+    </script>
 </body>
 </html>
